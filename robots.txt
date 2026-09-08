@@ -1,0 +1,4 @@
+# This portfolio uses page-level and HTTP X-Robots-Tag noindex directives.
+# Crawlers are allowed to fetch the page so they can see and obey those noindex directives.
+User-agent: *
+Allow: /

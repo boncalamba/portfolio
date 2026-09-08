@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f4ee">
+  <script>
+    (() => {
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('bon-theme') === 'dark' ? 'dark' : 'light';
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+
+  <!-- PRIVATE PORTFOLIO: intentionally excluded from search indexing -->
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+
+  <meta name="description" content="Private portfolio of Bon Jun Calamba — Senior Web Developer specializing in WordPress, WooCommerce, PHP, JavaScript, performance, technical SEO, and interactive front-end development.">
+  <meta name="author" content="Bon Jun Calamba">
+  <meta property="og:title" content="Bon Jun Calamba — Senior Web Developer">
+  <meta property="og:description" content="Private portfolio — WordPress engineering, e-commerce, performance, technical SEO, and GSAP-powered front-end experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-card.svg">
+
+  <title>Bon Jun Calamba — Senior Web Developer</title>
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png?v=2" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2" sizes="180x180">
+  <link rel="stylesheet" href="styles.css?v=7.14.0">
+</head>
+
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="loader-grid"></div>
+    <div class="loader-copy">
+      <span class="loader-kicker">BON / DEV</span>
+      <span class="loader-percent" id="loader-percent">000</span>
+    </div>
+  </div>
+
+  <div class="cursor-shell" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"><span class="cursor-label"></span></div>
+  </div>
+
+  <div id="app" v-cloak>
+    <header class="site-header">
+      <a class="brand smooth-link" href="#top" aria-label="Bon Jun Calamba home" data-cursor="HOME">
+        <span class="brand-mark">B</span>
+        <span class="brand-copy">
+          <strong>Bon Jun Calamba</strong>
+          <small>Senior Web Developer</small>
+        </span>
+      </a>
+
+      <div class="header-status">
+        <span class="status-dot"></span>
+        <span>Private portfolio</span>
+      </div>
+
+      <button class="menu-toggle" :class="{ active: menuOpen }" @click.stop="menuOpen = !menuOpen" :aria-expanded="menuOpen.toString()" :aria-label="menuOpen ? 'Close navigation' : 'Open navigation'" aria-controls="primary-navigation" data-cursor="MENU">
+        <span></span><span></span>
+      </button>
+
+      <nav id="primary-navigation" class="nav" :class="{ open: menuOpen }" aria-label="Primary navigation">
+        <a href="#work" class="smooth-link" @click="menuOpen = false" data-cursor="WORK">Work</a>
+        <a href="#capabilities" class="smooth-link" @click="menuOpen = false" data-cursor="SKILLS">Capabilities</a>
+        <a href="#cms" class="smooth-link" @click="menuOpen = false" data-cursor="CMS">CMS</a>
+        <a href="#experience" class="smooth-link" @click="menuOpen = false" data-cursor="TIMELINE">Experience</a>
+        <a href="#contact" class="nav-cta magnetic smooth-link" @click="menuOpen = false" data-cursor="TALK">Let’s talk</a>
+      </nav>
+    </header>
+
+    <button class="theme-toggle" :class="{ 'menu-hidden': menuOpen }" type="button" @click="toggleTheme" :aria-pressed="(theme === 'dark').toString()" :aria-label="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'" data-cursor="THEME">
+      <span class="theme-icon theme-sun" aria-hidden="true">☀</span>
+      <span class="theme-icon theme-moon" aria-hidden="true">☾</span>
+      <span class="theme-label" aria-hidden="true">{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
+    </button>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow hero-reveal">Based in the Philippines · Working globally</p>
+
+            <h1 class="hero-title gsap-text-heading">
+              I build websites that
+              <span class="accent-line">move, convert & last.</span>
+            </h1>
+
+            <p class="hero-lead hero-reveal">
+              Senior web developer focused on WordPress, WooCommerce, PHP, JavaScript,
+              performance, technical SEO, custom functionality, and motion-rich front-end experiences.
+            </p>
+
+            <div class="hero-actions hero-reveal">
+              <a class="button button-primary magnetic smooth-link" href="#work" data-cursor="EXPLORE">View selected work</a>
+              <a class="button button-ghost" href="assets/Bon-Jun-Calamba-Resume.pdf" target="_blank" rel="noopener" data-cursor="PDF">Download résumé</a>
+            </div>
+
+            <ul class="hero-stack hero-reveal" aria-label="Core technologies">
+              <li>WordPress</li>
+              <li>WooCommerce</li>
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>Vue.js</li>
+              <li>GSAP</li>
+            </ul>
+          </div>
+
+          <aside class="hero-code-panel hero-reveal" aria-label="Animated developer code preview">
+            <div class="editor-glow glow-a" aria-hidden="true"></div>
+            <div class="editor-glow glow-b" aria-hidden="true"></div>
+
+            <div class="editor-shell" id="editor-shell">
+              <div class="editor-toolbar">
+                <div class="editor-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+
+                <div class="editor-tabs">
+                  <span class="editor-tab active">
+                    <i class="tab-dot js-dot"></i>
+                    portfolio.js
+                  </span>
+                  <span class="editor-tab">
+                    <i class="tab-dot php-dot"></i>
+                    functions.php
+                  </span>
+                </div>
+
+                <div class="editor-state">
+                  <span class="status-dot"></span>
+                  live
+                </div>
+              </div>
+
+              <div class="editor-breadcrumb">
+                <span>src</span><b>›</b><span>portfolio</span><b>›</b><strong>portfolio.js</strong>
+              </div>
+
+              <div class="editor-body">
+                <div class="active-line-marker" aria-hidden="true"></div>
+
+                <div class="code-rail" aria-hidden="true">
+                  <span>01</span><span>02</span><span>03</span><span>04</span>
+                  <span>05</span><span>06</span><span>07</span><span>08</span>
+                  <span>09</span><span>10</span><span>11</span><span>12</span>
+                  <span>13</span>
+                </div>
+
+                <pre class="code-view" aria-hidden="true"><code>
+<span class="code-line"><span class="token-purple">const</span> <span class="token-blue">developer</span> = {</span>
+<span class="code-line">  name: <span class="token-green">'Bon Jun Calamba'</span>,</span>
+<span class="code-line">  role: <span class="token-green">'Senior Web Developer'</span>,</span>
+<span class="code-line">  stack: [<span class="token-green">'WP'</span>, <span class="token-green">'PHP'</span>, <span class="token-green">'Vue'</span>, <span class="token-green">'GSAP'</span>],</span>
+<span class="code-line">  <span class="token-blue">build</span>(site) {</span>
+<span class="code-line">    <span class="token-purple">return</span> <span class="token-yellow">optimize</span>(site)</span>
+<span class="code-line">      .<span class="token-yellow">animate</span>()</span>
+<span class="code-line">      .<span class="token-yellow">test</span>()</span>
+<span class="code-line">      .<span class="token-yellow">ship</span>();</span>
+<span class="code-line">  }</span>
+<span class="code-line">};</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="token-purple">gsap</span>.<span class="token-yellow">to</span>(<span class="token-green">'.experience'</span>, { <span class="token-blue">scrollTrigger</span>: <span class="token-green">'smooth'</span> });</span>
+                </code></pre>
+              </div>
+
+              <div class="terminal-panel">
+                <div class="terminal-head">
+                  <span>TERMINAL</span>
+                  <span class="terminal-tools">⌁ &nbsp;＋ &nbsp;⌄</span>
+                </div>
+
+                <div class="terminal-content">
+                  <div class="terminal-line">
+                    <span class="terminal-prompt">➜</span>
+                    <span class="terminal-path">~/portfolio</span>
+                    <span class="terminal-command">npm run build:experience</span>
+                    <span class="terminal-caret"></span>
+                  </div>
+                  <div class="terminal-output output-one">
+                    <span class="terminal-ok">✓</span> WordPress systems optimized
+                  </div>
+                  <div class="terminal-output output-two">
+                    <span class="terminal-ok">✓</span> GSAP motion compiled
+                  </div>
+                  <div class="terminal-output output-three">
+                    <span class="terminal-ok">✓</span> Ready to ship
+                    <span class="build-time">0.84s</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="editor-footer">
+                <span>Ln 13, Col 48</span>
+                <span>Spaces: 2</span>
+                <span>UTF-8</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+
+            <div class="code-badge badge-top" aria-hidden="true">
+              <span>CORE WEB VITALS</span>
+              <strong>PASS</strong>
+            </div>
+
+            <div class="code-badge badge-bottom" aria-hidden="true">
+              <span>BUILD MODE</span>
+              <strong>PRODUCTION</strong>
+            </div>
+
+            <div class="code-panel-meta">
+              <span>Animated code environment</span>
+              <span>Move your cursor</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="hero-scroll-cue hero-reveal" aria-hidden="true">
+          <span>Scroll</span>
+          <i></i>
+        </div>
+
+        <div class="hero-orb orb-one" aria-hidden="true"></div>
+        <div class="hero-orb orb-two" aria-hidden="true"></div>
+      </section>
+
+      <section class="marquee-wrap" aria-label="Specialties">
+        <div class="marquee">
+          <span>WORDPRESS ENGINEERING</span><i>✦</i>
+          <span>ECOMMERCE</span><i>✦</i>
+          <span>PERFORMANCE</span><i>✦</i>
+          <span>TECHNICAL SEO</span><i>✦</i>
+          <span>GSAP MOTION</span><i>✦</i>
+          <span>HOSTING & DNS</span><i>✦</i>
+          <span>WORDPRESS ENGINEERING</span><i>✦</i>
+          <span>ECOMMERCE</span><i>✦</i>
+          <span>PERFORMANCE</span><i>✦</i>
+          <span>TECHNICAL SEO</span><i>✦</i>
+          <span>GSAP MOTION</span><i>✦</i>
+          <span>HOSTING & DNS</span><i>✦</i>
+        </div>
+      </section>
+
+      <section id="work" class="section-shell section-pad section-transition">
+        <div class="section-wipe" aria-hidden="true"></div>
+
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 class="split-heading gsap-text-heading">Built, improved, maintained.</h2>
+          </div>
+          <p class="section-intro">
+            A mix of WordPress, e-commerce, marketing, and performance-focused client work.
+          </p>
+        </div>
+
+        <div class="filters reveal" data-anim="scale" aria-label="Project filters">
+          <button
+            v-for="filter in filters"
+            :key="filter"
+            @click="selectedFilter = filter"
+            :class="{ active: selectedFilter === filter }"
+            :data-cursor="filter.toUpperCase()"
+          >
+            {{ filter }}
+          </button>
+        </div>
+
+        <div class="project-grid">
+          <article
+            v-for="project in filteredProjects"
+            :key="project.url"
+            class="project-card reveal-card tilt-card"
+          >
+            <a :href="project.url" target="_blank" rel="noopener" class="project-link" data-cursor="VIEW">
+              <div class="project-visual" :class="'tone-' + project.tone">
+                <div class="browser-chrome"><span></span><span></span><span></span></div>
+                <div class="project-scanline" aria-hidden="true"></div>
+                <div class="visual-word">{{ project.short }}</div>
+                <div class="visual-line"></div>
+                <div class="visual-line short"></div>
+              </div>
+
+              <div class="project-meta">
+                <div>
+                  <p>{{ project.category }}</p>
+                  <h3>{{ project.name }}</h3>
+                </div>
+                <span class="arrow">↗</span>
+              </div>
+
+              <p class="project-description">{{ project.description }}</p>
+
+              <ul class="tag-list">
+                <li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
+              </ul>
+            </a>
+          </article>
+        </div>
+      </section>
+
+
+      <section id="about-visual" class="about-visual section-shell section-pad section-transition">
+        <div class="section-wipe" aria-hidden="true"></div>
+
+        <div class="about-visual-grid">
+          <div class="about-copy reveal">
+            <p class="eyebrow">Developer profile</p>
+            <h2 class="split-heading">A builder who can move between code, UX and client goals.</h2>
+            <p class="section-intro">
+              I work across WordPress, WooCommerce, PHP, JavaScript, technical SEO,
+              performance, hosting, and front-end interaction — with a strong focus on
+              making every implementation maintainable after launch.
+            </p>
+
+            <div class="about-points">
+              <div><span>01</span><strong>Build</strong><small>Custom functionality and CMS implementation</small></div>
+              <div><span>02</span><strong>Optimize</strong><small>Speed, SEO, stability and Core Web Vitals</small></div>
+              <div><span>03</span><strong>Maintain</strong><small>Ongoing QA, troubleshooting and client updates</small></div>
+            </div>
+          </div>
+
+          <div class="portrait-wrap reveal-card" data-cursor="PROFILE">
+            <div class="portrait-frame">
+              <img src="assets/bon-jun-calamba-portrait.png?v=1" alt="Bon Jun Calamba, Senior Web Developer">
+              <div class="portrait-sheen" aria-hidden="true"></div>
+              <div class="portrait-gridlines" aria-hidden="true"></div>
+            </div>
+            <div class="portrait-meta">
+              <span>Replace with your PNG later</span>
+              <strong>Bon Jun Calamba</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities" class="section-shell section-pad section-transition">
+        <div class="section-wipe" aria-hidden="true"></div>
+
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2 class="split-heading gsap-text-heading">From brief to browser.</h2>
+          </div>
+          <p class="section-intro">
+            I’m most useful when a project needs someone who can move between code, CMS,
+            performance, SEO, hosting, QA, and client requirements without losing the thread.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article v-for="(capability, index) in capabilities" :key="capability.title" class="capability reveal-card" :data-anim="index % 2 === 0 ? 'up' : 'scale'">
+            <span class="capability-num">0{{ index + 1 }}</span>
+            <h3>{{ capability.title }}</h3>
+            <p>{{ capability.description }}</p>
+            <ul>
+              <li v-for="item in capability.items" :key="item">{{ item }}</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+
+      <section id="cms" class="section-shell section-pad cms-section section-transition">
+        <div class="section-wipe" aria-hidden="true"></div>
+
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">CMS & platform experience</p>
+            <h2 class="split-heading gsap-text-heading">Platforms I work in every week.</h2>
+          </div>
+          <p class="section-intro">
+            Production experience across CMS, e-commerce, visual builders, funnels, and ongoing client maintenance.
+          </p>
+        </div>
+
+        <div class="cms-grid">
+          <article class="cms-card">
+            <div class="cms-logo-plate">
+              <span class="cms-logo-fallback" aria-hidden="true">WP</span><img src="https://cdn.simpleicons.org/wordpress" alt="WordPress logo" loading="lazy" onerror="this.style.display=\'none\'">
+            </div>
+            <div class="cms-card-copy">
+              <span class="cms-level">7+ years</span>
+              <h3>WordPress</h3>
+              <p>Custom PHP, themes, plugins, ACF, CPTs, Elementor, performance, technical SEO, maintenance, migrations, and troubleshooting.</p>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <div class="cms-logo-plate">
+              <span class="cms-logo-fallback" aria-hidden="true">WC</span><img src="https://cdn.simpleicons.org/woocommerce" alt="WooCommerce logo" loading="lazy" onerror="this.style.display=\'none\'">
+            </div>
+            <div class="cms-card-copy">
+              <span class="cms-level">Production e-commerce</span>
+              <h3>WooCommerce</h3>
+              <p>Catalog builds, product imports and exports, pricing updates, templates, custom PHP, merchandising, QA, and store maintenance.</p>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <div class="cms-logo-plate">
+              <span class="cms-logo-fallback" aria-hidden="true">S</span><img src="https://cdn.simpleicons.org/shopify" alt="Shopify logo" loading="lazy" onerror="this.style.display=\'none\'">
+            </div>
+            <div class="cms-card-copy">
+              <span class="cms-level">Client e-commerce</span>
+              <h3>Shopify</h3>
+              <p>Storefront updates, theme and section work, product and collection content, responsive improvements, and ongoing maintenance.</p>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <div class="cms-logo-plate">
+              <span class="cms-logo-fallback" aria-hidden="true">W</span><img src="https://cdn.simpleicons.org/webflow" alt="Webflow logo" loading="lazy" onerror="this.style.display=\'none\'">
+            </div>
+            <div class="cms-card-copy">
+              <span class="cms-level">Client builds</span>
+              <h3>Webflow</h3>
+              <p>Responsive page builds, CMS content, blog and landing-page implementation, custom interactions, and front-end refinements.</p>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <div class="cms-logo-plate">
+              <span class="cms-logo-fallback" aria-hidden="true">WIX</span><img src="https://cdn.simpleicons.org/wix" alt="Wix logo" loading="lazy" onerror="this.style.display=\'none\'">
+            </div>
+            <div class="cms-card-copy">
+              <span class="cms-level">CMS experience</span>
+              <h3>Wix</h3>
+              <p>Page editing, responsive layout work, content updates, visual cleanup, and ongoing website maintenance.</p>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <div class="cms-logo-plate highlevel-plate">
+              <span class="cms-logo-fallback" aria-hidden="true">GHL</span>
+              <img class="ghl-logo" src="https://assets.cdn.filesafe.space/zELBHkVp0JPbbLvKIlF5/media/690a5f4a57ea175183408da2.png" alt="Official HighLevel logo" loading="lazy" onerror="this.style.display=\'none\'">
+            </div>
+            <div class="cms-card-copy">
+              <span class="cms-level">Funnels & client sites</span>
+              <h3>HighLevel / GHL</h3>
+              <p>Landing pages, funnels, custom CSS and JavaScript, SEO implementation, responsive fixes, client updates, and conversion-focused site work.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="horizontal-lab section-transition" aria-label="Interactive development principles">
+        <div class="section-wipe" aria-hidden="true"></div>
+        <div class="horizontal-pin">
+          <div class="horizontal-track">
+            <article class="lab-panel">
+              <span class="lab-index">01</span>
+              <p>Diagnose before touching code.</p>
+            </article>
+            <article class="lab-panel">
+              <span class="lab-index">02</span>
+              <p>Build for maintainability, not just launch day.</p>
+            </article>
+            <article class="lab-panel">
+              <span class="lab-index">03</span>
+              <p>Make motion support the interface.</p>
+            </article>
+            <article class="lab-panel">
+              <span class="lab-index">04</span>
+              <p>Measure performance after every important change.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section-shell section-pad section-transition">
+        <div class="section-wipe" aria-hidden="true"></div>
+
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2 class="split-heading gsap-text-heading">Long-term, hands-on web work.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article v-for="(job, index) in experience" :key="job.company" class="timeline-row reveal" :data-anim="index % 2 === 0 ? 'left' : 'right'">
+            <div class="timeline-date">{{ job.period }}</div>
+            <div class="timeline-role">
+              <h3>{{ job.role }}</h3>
+              <p>{{ job.company }} · {{ job.location }}</p>
+            </div>
+            <div class="timeline-copy">{{ job.summary }}</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="statement section-shell section-pad">
+        <div class="statement-card reveal" data-anim="blur">
+          <p class="eyebrow">How I work</p>
+          <p class="statement-text">
+            Understand the system. Find the real issue. Build the cleanest practical solution.
+            Test it across devices. Ship carefully. Measure what changed.
+          </p>
+          <div class="statement-steps">
+            <span>01 Diagnose</span>
+            <span>02 Build</span>
+            <span>03 QA</span>
+            <span>04 Improve</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-shell section-pad section-transition">
+        <div class="section-wipe" aria-hidden="true"></div>
+
+        <div class="contact-card reveal" data-anim="scale">
+          <p class="eyebrow">Contact</p>
+          <h2 class="gsap-text-heading">Need a developer who can own the details?</h2>
+          <p>
+            I’m open to senior WordPress, full-stack web, e-commerce, and long-term remote development opportunities.
+          </p>
+
+          <div class="contact-actions">
+            <a class="button button-primary magnetic" href="mailto:bonjun.calamba@gmail.com" data-cursor="EMAIL">
+              Email me
+            </a>
+            <a class="button button-ghost" href="https://wa.me/639074032640" target="_blank" rel="noopener" data-cursor="WHATSAPP">
+              WhatsApp
+            </a>
+            <a class="button button-ghost" href="viber://chat?number=%2B639074032640" data-cursor="VIBER">
+              Viber
+            </a>
+            <a class="button button-ghost" href="https://www.linkedin.com/in/boncalamba/" target="_blank" rel="noopener" data-cursor="LINKEDIN">
+              LinkedIn ↗
+            </a>
+          </div>
+
+          <div class="contact-number">+63 907 403 2640 · WhatsApp / Viber</div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="social-rail" aria-label="Quick contact links">
+      <a href="mailto:bonjun.calamba@gmail.com" aria-label="Email Bon" data-cursor="EMAIL">EM</a>
+      <a href="https://wa.me/639074032640" target="_blank" rel="noopener" aria-label="WhatsApp Bon" data-cursor="WA">WA</a>
+      <a href="viber://chat?number=%2B639074032640" aria-label="Viber Bon" data-cursor="VB">VB</a>
+      <a href="https://www.linkedin.com/in/boncalamba/" target="_blank" rel="noopener" aria-label="LinkedIn profile" data-cursor="IN">IN</a>
+    </aside>
+
+    <footer class="site-footer section-shell">
+      <span>© {{ currentYear }} Bon Jun Calamba</span>
+      <span>Private portfolio · No search indexing</span>
+      <span>HTML · Vue.js · GSAP</span>
+    </footer>
+  </div>
+
+  <noscript>
+    <div class="noscript">This portfolio uses JavaScript for interactive project rendering and animation.</div>
+  </noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.5.41/dist/vue.global.prod.js" onerror="this.onerror=null;this.src='https://unpkg.com/vue@3.5.41/dist/vue.global.prod.js'"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.13.0/dist/gsap.min.js'"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.13.0/dist/ScrollTrigger.min.js'"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"
+    onerror="this.onerror=null;this.src='https://unpkg.com/lenis@1.3.26/dist/lenis.min.js'"></script>
+<script src="app.js?v=7.14.0"></script>
+  <script src="reveal.js?v=7.14.0"></script>
+</body>
+</html>
