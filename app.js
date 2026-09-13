@@ -65,7 +65,7 @@
             name: "Phenyx",
             short: "PHE",
             category: "Built from scratch · WordPress",
-            workType: "Build from Scratch",
+            workType: "Website Changes and Maintenance",
             type: ["Build from Scratch", "WordPress", "Marketing"],
             url: "https://phenyx.com.au/",
             description: "Australian digital growth studio promoting Google Ads, Meta Ads, SEO and conversion-focused website services.",
