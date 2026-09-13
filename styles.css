@@ -653,7 +653,7 @@ html[data-theme="dark"] .theme-moon{opacity:1;color:#080808}
   font-size:11px;
 }
 .filters button.active{
-  color:#0a0a0a;
+  color:#74a500;
   background:var(--text);
   border-color:var(--text);
 }
@@ -699,6 +699,37 @@ html[data-theme="dark"] .theme-moon{opacity:1;color:#080808}
   border-radius:50%;
   z-index:-1;
 }
+.project-site-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  z-index:0;
+  opacity:0;
+  transform:scale(1.015);
+  transition:opacity .35s ease,transform .65s cubic-bezier(.2,.7,.2,1);
+  background:transparent;
+}
+.project-visual.has-site-image .project-site-image{opacity:1;transform:scale(1)}
+.project-visual.has-site-image::before{opacity:0}
+.project-visual.has-site-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(to bottom,rgba(4,8,10,.03) 52%,rgba(4,8,10,.34) 100%);
+}
+.project-visual.has-site-image .visual-word,
+.project-visual.has-site-image .visual-line{opacity:0;transform:translateY(12px)}
+.project-visual .visual-word,
+.project-visual .visual-line{position:relative;z-index:2;transition:opacity .25s ease,transform .35s ease}
+.project-visual .browser-chrome{z-index:3}
+.project-visual .project-scanline{z-index:4}
+.project-link-disabled{cursor:default}
+.project-link-disabled .arrow{opacity:.35}
 .tone-1{background:linear-gradient(145deg,#1a2630,#153e36)}
 .tone-2{background:linear-gradient(145deg,#3e2e28,#8c5e46)}
 .tone-3{background:linear-gradient(145deg,#201f45,#593b7a)}
@@ -2435,3 +2466,194 @@ html[data-theme="dark"] .page-loader{background:linear-gradient(145deg,#050505,#
 }
 .timeline-row:hover{background:rgba(114,180,0,.035)}
 html[data-theme="dark"] .timeline-row:hover{background:rgba(201,255,74,.025)}
+
+
+/* ==========================================================
+   V9 — lightweight premium motion / Apple-inspired restraint
+   ========================================================== */
+
+/* Cleaner background compositing: keep texture subtle and static. */
+.page-noise{
+  opacity:.025;
+  mix-blend-mode:normal;
+}
+
+/* Three-column portfolio layout on full desktop. */
+.project-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.project-card{
+  will-change:auto;
+  transform-style:preserve-3d;
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    border-color .35s ease,
+    box-shadow .55s cubic-bezier(.16,1,.3,1);
+}
+.project-card:hover{
+  transform:translateY(-7px) scale(1.008);
+  border-color:var(--line-strong);
+  box-shadow:0 24px 56px rgba(0,0,0,.16);
+}
+.project-link{padding:11px 11px 19px}
+.project-visual{
+  height:235px;
+  transform:none;
+  transition:transform .7s cubic-bezier(.16,1,.3,1);
+}
+.project-card:hover .project-visual{transform:scale(.992)}
+.project-site-image{
+  transform:scale(1.025);
+  transition:opacity .38s ease,transform 1s cubic-bezier(.16,1,.3,1);
+}
+.project-card:hover .project-site-image,
+.project-visual.has-site-image .project-site-image{transform:scale(1)}
+.project-meta{
+  padding:16px 6px 0;
+  transform:none;
+}
+.project-meta h3{font-size:21px;line-height:1.08}
+.project-description{
+  margin:11px 6px 0;
+  font-size:12px;
+  line-height:1.58;
+}
+.tag-list{padding:0 6px;margin-top:14px;gap:6px}
+.tag-list li{font-size:8px}
+.visual-word{font-size:clamp(42px,5vw,72px)}
+
+/* Remove GPU-heavy local blur stack from earlier versions. */
+html.motion-ready .reveal-local,
+html.motion-ready .word-reveal > span,
+html.motion-ready .list-stagger > *{
+  filter:none!important;
+  will-change:auto!important;
+}
+
+/* Lightweight custom cursor: one small dot, no trailing ring, blur or labels. */
+.cursor-shell{
+  width:0;
+  height:0;
+  opacity:0;
+  transition:opacity .15s ease;
+}
+.cursor-shell.cursor-ready{opacity:1}
+.cursor-dot{
+  width:10px;
+  height:10px;
+  background:var(--text);
+  border:1px solid var(--bg);
+  box-shadow:none;
+  transition:
+    width .18s cubic-bezier(.16,1,.3,1),
+    height .18s cubic-bezier(.16,1,.3,1),
+    background-color .18s ease,
+    border-color .18s ease;
+}
+.cursor-ring,.cursor-label{display:none!important}
+.cursor-shell.is-active .cursor-dot{
+  width:18px;
+  height:18px;
+  background:var(--accent);
+  border-color:rgba(255,255,255,.7);
+}
+
+/* Premium editor interaction without continuous pointer tracking. */
+.editor-shell{
+  transition:transform .7s cubic-bezier(.16,1,.3,1),box-shadow .7s cubic-bezier(.16,1,.3,1);
+}
+.hero-code-panel:hover .editor-shell{
+  transform:translateY(-5px) rotateX(1.2deg) scale(1.005);
+}
+
+/* iPhone/Mac-style motion: large surfaces settle rather than wobble. */
+.hero-code-panel,
+.statement-card,
+.contact-card,
+.portrait-wrap{
+  transform-origin:50% 60%;
+  backface-visibility:hidden;
+}
+
+@media(max-width:1180px){
+  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-visual{height:270px}
+}
+
+@media(max-width:720px){
+  .project-grid{grid-template-columns:1fr;gap:16px}
+  .project-visual{height:250px}
+  .project-card:hover{transform:none;box-shadow:none}
+}
+
+@media(hover:hover) and (pointer:fine){
+  body,a,button{cursor:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cursor-shell{display:none!important}
+  body,a,button{cursor:auto!important}
+  .project-card:hover,.hero-code-panel:hover .editor-shell{transform:none!important}
+}
+
+
+/* V10 recruiter-facing resume alignment */
+.recruiter-proof{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  margin-top:10px;
+  margin-bottom:58px;
+  background:color-mix(in srgb,var(--surface) 82%,transparent);
+}
+.proof-card{
+  min-height:142px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  gap:8px;
+  border-right:1px solid var(--line);
+}
+.proof-card:last-child{border-right:0}
+.proof-card strong{
+  font-size:clamp(24px,2.5vw,38px);
+  letter-spacing:-.045em;
+  line-height:1;
+}
+.proof-card span{
+  max-width:220px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.55;
+  text-transform:uppercase;
+  letter-spacing:.075em;
+}
+.timeline-copy{display:block}
+.timeline-summary{margin:0;color:var(--text);font-size:13px;line-height:1.7}
+.timeline-highlights{margin:14px 0 0;padding:0 0 0 18px;display:grid;gap:7px;color:var(--muted)}
+.timeline-highlights li{font-size:11px;line-height:1.6;padding-left:3px}
+.career-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.career-detail-card{min-height:255px;padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+.career-detail-card>span{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.career-detail-card h3{font-size:27px;letter-spacing:-.04em;margin:52px 0 10px}
+.career-detail-card p{color:var(--muted);font-size:13px;line-height:1.65;margin:0 0 22px}
+.career-detail-card strong{margin-top:auto;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:980px){
+  .recruiter-proof{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof-card:nth-child(2){border-right:0}
+  .proof-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .career-detail-grid{grid-template-columns:1fr}
+  .career-detail-card{min-height:210px}
+}
+@media(max-width:640px){
+  .recruiter-proof{grid-template-columns:1fr;margin-bottom:36px}
+  .proof-card{min-height:112px;border-right:0;border-bottom:1px solid var(--line)}
+  .proof-card:last-child{border-bottom:0}
+  .proof-card:nth-child(2){border-bottom:1px solid var(--line)}
+  .timeline-summary{font-size:12px}
+  .timeline-highlights li{font-size:10.5px}
+}

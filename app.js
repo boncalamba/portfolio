@@ -17,136 +17,590 @@
         menuScrollY: 0,
         theme: 'light',
         selectedFilter: 'All',
-        filters: ['All', 'WordPress', 'E-commerce', 'Marketing'],
+        filters: ['All', 'Build from Scratch', 'Website Changes and Maintenance', 'WordPress', 'E-commerce'],
         projects: [
           {
-            name: 'Phenyx',
-            short: 'PHX',
-            category: 'Agency / WordPress',
-            type: ['WordPress', 'Marketing'],
-            url: 'https://phenyx.com.au/',
-            description: 'Ongoing WordPress development, optimization, maintenance, troubleshooting, performance work, and technical SEO in an agency environment.',
-            tags: ['WordPress', 'GSAP', 'Performance'],
-            tone: 1
+            name: "Whitestone Australia",
+            short: "WA",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://whitestoneaustralia.com.au/",
+            description: "Australian property development and project management company showcasing residential, childcare, disability and mixed-use developments.",
+            tags: ["WordPress", "Elementor/Custom Front-e", "JavaScript/Swiper"],
+            tone: 1,
+            image: "assets/portfolio/whitestoneaustralia.webp",
+            imageLoaded: false,
+            imageFailed: false
           },
           {
-            name: 'Little Blossom',
-            short: 'LB',
-            category: 'Client Website',
-            type: ['WordPress'],
-            url: 'https://littleblossom.net.au/',
-            description: 'Responsive client-site development and ongoing implementation work focused on usability, consistency, and maintainability.',
-            tags: ['WordPress', 'Responsive', 'CMS'],
-            tone: 2
+            name: "Sadek Group",
+            short: "SG",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://sadekgroup.com.au/",
+            description: "Sydney concrete pumping and placement company serving residential and commercial projects, with equipment, services and project galleries.",
+            tags: ["WordPress", "Elementor", "CSS/JS"],
+            tone: 2,
+            image: "assets/portfolio/sadekgroup.webp",
+            imageLoaded: false,
+            imageFailed: false
           },
           {
-            name: 'Chris Kille',
-            short: 'CK',
-            category: 'Personal Brand / Marketing',
-            type: ['WordPress', 'Marketing'],
-            url: 'https://chriskille.com/',
-            description: 'Marketing-focused WordPress implementation with attention to conversion flows, presentation, performance, and content management.',
-            tags: ['WordPress', 'Marketing', 'SEO'],
-            tone: 3
+            name: "Little Blossom",
+            short: "LB",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://littleblossom.net.au/",
+            description: "Early learning and childcare website for Little Blossom Early Learning in Glenorie, NSW.",
+            tags: ["WordPress", "Elementor", "Responsive"],
+            tone: 3,
+            image: "assets/portfolio/littleblossom.webp",
+            imageLoaded: false,
+            imageFailed: false
           },
           {
-            name: 'Grand Reve',
-            short: 'GR',
-            category: 'Client Website',
-            type: ['WordPress'],
-            url: 'https://grandreve.com.au/',
-            description: 'WordPress development and optimization work supporting a polished front-end experience and reliable site operations.',
-            tags: ['WordPress', 'UI', 'Optimization'],
-            tone: 4
+            name: "Phenyx",
+            short: "PHE",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress", "Marketing"],
+            url: "https://phenyx.com.au/",
+            description: "Australian digital growth studio promoting Google Ads, Meta Ads, SEO and conversion-focused website services.",
+            tags: ["WordPress", "Custom Front-end", "JavaScript/GSAP"],
+            tone: 4,
+            image: "assets/portfolio/phenyx.webp",
+            imageLoaded: false,
+            imageFailed: false
           },
           {
-            name: 'Kelso Tools',
-            short: 'KT',
-            category: 'E-commerce / Catalog',
-            type: ['WordPress', 'E-commerce'],
-            url: 'https://www.kelsotools.com.au/',
-            description: 'E-commerce and catalog website implementation including WordPress, WooCommerce, product content, custom front-end work, and QA.',
-            tags: ['WooCommerce', 'PHP', 'QA'],
-            tone: 5
+            name: "Grand Reve",
+            short: "GR",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://grandreve.com.au/",
+            description: "Property development website for the Grand Rêve residential apartment project in Castle Hill, with residences, news and project information.",
+            tags: ["WordPress", "Elementor/Custom Front-e", "responsive media"],
+            tone: 5,
+            image: "assets/portfolio/grandreve.webp",
+            imageLoaded: false,
+            imageFailed: false
           },
           {
-            name: 'Kin Property',
-            short: 'KIN',
-            category: 'Business Website',
-            type: ['WordPress', 'Marketing'],
-            url: 'https://www.kinproperty.com.au/',
-            description: 'WordPress development and maintenance covering front-end implementation, hosting workflows, analytics, SEO foundations, and site reliability.',
-            tags: ['WordPress', 'Analytics', 'Hosting'],
-            tone: 6
+            name: "Elite",
+            short: "ELI",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://elite.com.au/",
+            description: "Australia-wide cleaning, restoration and maintenance services website covering carpet cleaning, mould, water and fire restoration.",
+            tags: ["WordPress/custom CMS fro", "custom JavaScript"],
+            tone: 6,
+            image: "assets/portfolio/elite.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Elite Test & Tag",
+            short: "ETT",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://elitetestandtag.com.au/",
+            description: "Electrical test-and-tag service website for workplace electrical safety, compliance and related commercial services.",
+            tags: ["WordPress", "Elementor/Custom Front-e"],
+            tone: 1,
+            image: "assets/portfolio/elitetestandtag.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Westmix",
+            short: "WES",
+            category: "Changes & maintenance · Shopify",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "E-commerce"],
+            url: "https://westmix.com.au/",
+            description: "Australian construction and trade equipment brand website featuring mixers, wheelbarrows and related product ranges.",
+            tags: ["Shopify", "Liquid theme", "JavaScript"],
+            tone: 3,
+            image: "assets/portfolio/westmix.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Bayside Pools",
+            short: "BP",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://baysidepools.com.au/",
+            description: "Swimming pool design, construction and service website focused on residential pool projects and customer enquiries.",
+            tags: ["WordPress", "Elementor", "CSS/JS"],
+            tone: 4,
+            image: "assets/portfolio/baysidepools.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Kin Property",
+            short: "KP",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://kinproperty.com.au/",
+            description: "Property settlement and defect-management website supporting Australian developers, builders and off-the-plan purchasers.",
+            tags: ["WordPress", "custom theme/plugins", "project filtering"],
+            tone: 5,
+            image: "assets/portfolio/kinproperty.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "South Melbourne Glass",
+            short: "SMG",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "Marketing"],
+            url: "https://southmelbourneglass.com.au/",
+            description: "Melbourne glazing company website promoting commercial glazing, glass replacement, mirrors, splashbacks, showers and balustrades.",
+            tags: ["WordPress", "Page Builder", "Forms"],
+            tone: 6,
+            image: "assets/portfolio/southmelbourneglass.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Tuscan Path",
+            short: "TP",
+            category: "Changes & maintenance · Shopify",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "E-commerce"],
+            url: "https://tuscanpath.com.au/",
+            description: "Outdoor living and garden products catalogue for pots, pavers, pebbles, edging, screens and landscaping inspiration.",
+            tags: ["Shopify", "Liquid theme", "JavaScript"],
+            tone: 1,
+            image: "assets/portfolio/tuscanpath.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Epping Secondary College",
+            short: "ESC",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://eppingsc.vic.edu.au/",
+            description: "Victorian secondary school website containing enrolment, curriculum, student resources, forms, policies and college information.",
+            tags: ["WordPress", "custom theme/page templa", "document management"],
+            tone: 3,
+            image: "assets/portfolio/eppingsc.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Goulburn Australia",
+            short: "GA",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://goulburnaustralia.com.au/",
+            description: "Destination and regional tourism website for Goulburn, NSW featuring events, attractions, guides, lifestyle and visitor information.",
+            tags: ["WordPress", "custom theme", "WP_Query"],
+            tone: 4,
+            image: "assets/portfolio/goulburnaustralia.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Nylex",
+            short: "NYL",
+            category: "Changes & maintenance · Shopify",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "E-commerce"],
+            url: "https://nylex.com.au/",
+            description: "Australian garden watering brand website showcasing hoses, hose storage, sprayers, watering accessories and advice.",
+            tags: ["Shopify", "Liquid theme", "JavaScript"],
+            tone: 5,
+            image: "assets/portfolio/nylex.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Truckers Toy Store",
+            short: "TTS",
+            category: "Changes & maintenance · WooCommerce",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "E-commerce"],
+            url: "https://truckerstoystore.com.au/",
+            description: "Australian ecommerce store selling truck parts and accessories with online ordering, finance options, account features and product support.",
+            tags: ["WordPress", "WooCommerce", "custom ecommerce front-e"],
+            tone: 1,
+            image: "assets/portfolio/truckerstoystore.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Skyon Group",
+            short: "SG",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://www.skyongroup.com/",
+            description: "Corporate services website presenting the Skyon Group brand, services, projects and business information.",
+            tags: ["WordPress", "Elementor/Custom Front-e"],
+            tone: 2,
+            image: "assets/portfolio/skyongroup.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Chris Kille",
+            short: "CK",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress", "Marketing"],
+            url: "https://chriskille.com/",
+            description: "Personal brand and business website for entrepreneur Chris Kille, featuring services, content and conversion-focused calls to action.",
+            tags: ["WordPress", "Elementor", "CSS/JS"],
+            tone: 3,
+            image: "assets/portfolio/chriskille.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Healthy ZZZs",
+            short: "HZ",
+            category: "Changes & maintenance · WooCommerce",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "E-commerce", "Marketing"],
+            url: "https://shophealthyzzzs.com/",
+            description: "Mattress and sleep-products ecommerce website with product catalogues, promotional content and online shopping.",
+            tags: ["WordPress", "WooCommerce", "Elementor"],
+            tone: 4,
+            image: "assets/portfolio/shophealthyzzzs.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Mattress Superstore",
+            short: "MS",
+            category: "Changes & maintenance · WooCommerce",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "E-commerce", "Marketing"],
+            url: "https://mattress-superstore.com/",
+            description: "Mattress retail ecommerce website featuring mattress brands, product pages, promotions and local-store shopping information.",
+            tags: ["WordPress", "WooCommerce", "Elementor"],
+            tone: 5,
+            image: "assets/portfolio/mattress-superstore.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Midwest Mattress Company",
+            short: "MMC",
+            category: "Changes & maintenance · WooCommerce",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "E-commerce", "Marketing"],
+            url: "https://midwestmattresscompany.com/",
+            description: "Regional mattress retailer website with ecommerce catalogue, mattress collections, promotions and store-focused content.",
+            tags: ["WordPress", "WooCommerce", "Elementor"],
+            tone: 6,
+            image: "assets/portfolio/midwestmattresscompany.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Jacksonville Bedding",
+            short: "JB",
+            category: "Changes & maintenance · WooCommerce",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "E-commerce"],
+            url: "https://jacksonvillebedding.com/",
+            description: "Mattress and bedding retailer website with product catalogue, sleep products, promotions and local customer information.",
+            tags: ["WordPress", "WooCommerce", "Elementor"],
+            tone: 1,
+            image: "assets/portfolio/jacksonvillebedding.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Sleeptronic",
+            short: "SLE",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://sleeptronic.com/",
+            description: "American mattress manufacturer website showcasing product lines, mattress technologies, retailer information and sleep education.",
+            tags: ["WordPress", "ACF Pro", "Custom PHP"],
+            tone: 2,
+            image: "assets/portfolio/sleeptronic.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Golden Isles Mattress",
+            short: "GIM",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "E-commerce", "Marketing"],
+            url: "https://goldenislesmattress.com/",
+            description: "Brunswick, Georgia mattress retailer with ecommerce products, local showroom information, appointments, financing and delivery content.",
+            tags: ["WordPress/ecommerce", "GoHighLevel integrations", "Custom Front-end"],
+            tone: 3,
+            image: "assets/portfolio/goldenislesmattress.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Boise Mattress",
+            short: "BM",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "Marketing"],
+            url: "https://boisemattress.com/",
+            description: "Local mattress retailer website with location-focused landing pages, mattress products and search-optimized store content.",
+            tags: ["WordPress", "Elementor", "SEO/location landing pag"],
+            tone: 4,
+            image: "assets/portfolio/boisemattress.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Juna Sleep",
+            short: "JS",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress", "Marketing"],
+            url: "https://junasleep.com/",
+            description: "Sleep and mattress brand website supporting product marketing, landing pages and campaign assets.",
+            tags: ["WordPress", "Elementor", "campaign landing pages"],
+            tone: 5,
+            image: "assets/portfolio/junasleep.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Origami Design Build",
+            short: "ODB",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://origamidesignbuild.com/",
+            description: "Bay Area and Sacramento design-build company website for custom homes, ADUs, additions, remodels and commercial improvements.",
+            tags: ["WordPress", "Elementor/Page Builder", "Forms"],
+            tone: 1,
+            image: "assets/portfolio/origamidesignbuild.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Elevate Construction Group",
+            short: "ECG",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://elevatebld.com/",
+            description: "Northern California construction website focused on window, siding and door replacement, financing, service areas and project leads.",
+            tags: ["WordPress", "Elementor/Page Builder", "interactive estimator/Fo"],
+            tone: 3,
+            image: "assets/portfolio/elevatebld.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Do It Better LLLP",
+            short: "DIB",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://doitbetterlllp.com/",
+            description: "Chicagoland commercial and semi-truck tire company website covering tire sales, installation, delivery and wholesale supply.",
+            tags: ["WordPress", "Page Builder", "Forms"],
+            tone: 4,
+            image: "assets/portfolio/doitbetterlllp.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Seattle Modern Buildings",
+            short: "SMB",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://seattlemodernbuildings.com/",
+            description: "Seattle ADU/DADU design-build website featuring feasibility reviews, projects, pricing guidance, permitting and construction services.",
+            tags: ["WordPress", "Divi", "Contact Form 7"],
+            tone: 5,
+            image: "assets/portfolio/seattlemodernbuildings.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Tico's Farm & Cattle",
+            short: "TSF",
+            category: "Built from scratch · WordPress",
+            workType: "Build from Scratch",
+            type: ["Build from Scratch", "WordPress"],
+            url: "https://ticosfarmandcattle.com/",
+            description: "East Texas farm and cattle website showcasing Red Brahman genetics, breeding programs, premium sires and commercial beef operations.",
+            tags: ["WordPress", "Page Builder", "Responsive"],
+            tone: 2,
+            image: "assets/portfolio/ticosfarmandcattle.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Thomas Harris / Harris Team",
+            short: "THH",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://harristeam.co/",
+            description: "Professional/team website used for brand positioning, services, lead generation and client-facing information.",
+            tags: ["WordPress", "Page Builder", "Forms"],
+            tone: 3,
+            image: "assets/portfolio/harristeam.webp",
+            imageLoaded: false,
+            imageFailed: false
+          },
+          {
+            name: "Forbidden Well",
+            short: "FW",
+            category: "Changes & maintenance · WordPress",
+            workType: "Website Changes and Maintenance",
+            type: ["Website Changes and Maintenance", "WordPress"],
+            url: "https://forbiddenwell.com/",
+            description: "New York luxury medical spa and wellness website for IV therapy, aesthetics, recovery and optimization services.",
+            tags: ["WordPress", "Elementor/Page Builder", "Booking / Forms"],
+            tone: 4,
+            image: "assets/portfolio/forbiddenwell.webp",
+            imageLoaded: false,
+            imageFailed: false
           }
         ],
         capabilities: [
           {
             title: 'WordPress Engineering',
-            description: 'Full lifecycle WordPress work from setup and templates to custom functionality and long-term maintenance.',
-            items: ['Custom PHP', 'ACF & CPTs', 'Theme / plugin work', 'Elementor']
+            description: 'End-to-end WordPress delivery covering production builds, custom functionality, content architecture, e-commerce, and long-term maintenance.',
+            items: ['WooCommerce', 'Elementor Pro', 'ACF Pro / CPT', 'Themes & plugins']
           },
           {
-            title: 'E-commerce',
-            description: 'Product-driven sites that are easy to manage and dependable under real client workflows.',
-            items: ['WooCommerce', 'Shopify', 'Product imports', 'Catalog QA']
+            title: 'Front-End Development',
+            description: 'Responsive and mobile-first interfaces built with clean front-end code, reusable components, and interaction that supports usability.',
+            items: ['HTML5 / CSS3', 'JavaScript / jQuery', 'Vue.js / AJAX', 'GSAP / Bootstrap']
           },
           {
-            title: 'Front-end & Motion',
-            description: 'Responsive interfaces with interaction and motion used to improve clarity rather than distract from it.',
-            items: ['HTML / CSS', 'JavaScript', 'GSAP', 'Responsive UI']
-          },
-          {
-            title: 'Performance',
-            description: 'Practical performance improvements across assets, templates, hosting, caching, and Core Web Vitals.',
-            items: ['Core Web Vitals', 'WP Rocket', 'PageSpeed', 'Asset optimization']
+            title: 'Back-End & Integrations',
+            description: 'Practical PHP and data work for custom WordPress behavior, integrations, APIs, webhooks, and production troubleshooting.',
+            items: ['PHP / MySQL', 'REST APIs', 'JSON / Webhooks', 'Third-party integrations']
           },
           {
             title: 'SEO & Analytics',
-            description: 'Technical implementation that helps marketing and content teams measure and improve what matters.',
-            items: ['Technical SEO', 'RankMath', 'GA4 / GTM', 'Search Console']
+            description: 'Technical and on-page SEO implementation paired with analytics and auditing tools to improve visibility, measurement, and site health.',
+            items: ['Technical SEO', 'GA4 / GTM', 'Search Console', 'Semrush / Screaming Frog']
           },
           {
-            title: 'Hosting & Reliability',
-            description: 'Hands-on infrastructure work for migrations, staging, domains, DNS, SSL, and security layers.',
-            items: ['Hostinger / cPanel', 'Cloudflare', 'DNS / SSL', 'Migrations']
+            title: 'Performance & Security',
+            description: 'Performance tuning across front-end assets, caching, image delivery, databases, and CDN layers with Core Web Vitals in mind.',
+            items: ['PageSpeed', 'WP Rocket', 'Cloudflare / CDN', 'WebP / CSS-JS optimization']
+          },
+          {
+            title: 'Hosting & Infrastructure',
+            description: 'Hands-on ownership of the infrastructure around a website, including staging, migrations, domains, SSL, DNS, and email authentication.',
+            items: ['Hostinger / WP Engine', 'cPanel / Bluehost', 'DNS / SSL', 'SPF / DKIM / DMARC']
+          },
+          {
+            title: 'CRM & Automation',
+            description: 'Lead-generation and marketing integrations connecting websites, funnels, forms, CRMs, and follow-up workflows.',
+            items: ['GoHighLevel', 'Make', 'HubSpot / ActiveCampaign', 'Zapier / Webhooks']
+          },
+          {
+            title: 'Development & QA',
+            description: 'Reliable release workflows using source control, debugging tools, staging, and cross-browser testing before production handoff.',
+            items: ['Git / GitHub', 'VS Code', 'Chrome DevTools', 'FTP / SFTP & QA']
+          },
+          {
+            title: 'Design & Collaboration',
+            description: 'Comfortable working from design files and coordinating delivery inside the project-management tools used by distributed teams.',
+            items: ['Figma / Photoshop', 'Canva', 'Jira / Asana / Trello', 'Slack / Teams / Notion']
           }
         ],
         experience: [
           {
-            period: '2024 — Present',
+            period: 'May 2025 — Aug 2026',
+            role: 'Web Developer & SEO',
+            company: 'First Direct Marketing',
+            location: 'United States · Remote',
+            summary: 'Built and maintained conversion-focused WordPress websites, landing pages, and GoHighLevel funnels while supporting technical SEO, analytics, CRM workflows, lead generation, and campaign performance.',
+            highlights: [
+              'Performed on-page and technical SEO updates across metadata, heading structure, internal linking, image optimization, indexability, and service/campaign pages.',
+              'Used GA4, Search Console, Rank Math, and PageSpeed Insights to identify SEO, usability, and performance issues and support ongoing optimization.',
+              'Built forms, CRM workflows, lead routing, follow-up automation, reusable campaign sections, and custom HTML, CSS, JavaScript, and GSAP interactions; troubleshot front-end, tracking, and integration issues across devices.'
+            ]
+          },
+          {
+            period: 'Mar 2024 — Apr 2025',
             role: 'Senior Web Developer',
             company: 'Phenyx',
             location: 'Australia · Remote',
-            summary: 'Develop, optimize, troubleshoot, and maintain WordPress sites while handling performance, technical SEO, DNS, Cloudflare, analytics, and client delivery.'
+            summary: 'Owned end-to-end development, optimization, and maintenance of client WordPress sites in a fast-paced agency environment.',
+            highlights: [
+              'Handled Hostinger setup, advanced functionality, compatibility troubleshooting, GSAP interface work, DNS, Cloudflare, and email deliverability.',
+              'Ran on-page SEO and site-health work with Rank Math, GA4, and Search Console; used ACF Pro for custom fields and WP Rocket / PageSpeed Insights for performance tuning.',
+              'Coordinated multi-client delivery through Trello and consistently worked to production deadlines.'
+            ]
           },
           {
-            period: '2023 — 2024',
+            period: 'Feb 2023 — Feb 2024',
             role: 'Web Developer',
             company: 'Oracle NetSuite',
             location: 'United States · Remote',
-            summary: 'Maintained web content, event and webinar pages, forms, sitemaps, and site updates while collaborating with content, design, and SEO teams.'
+            summary: 'Published and maintained HTML content and event experiences while collaborating with content, design, and SEO specialists.',
+            highlights: [
+              'Built and maintained webinar and event pages with registration and confirmation flows.',
+              'Maintained sitemap structure and page updates supporting SEO and user navigation.',
+              'Troubleshot functionality, compatibility, and performance issues with cross-functional teams.'
+            ]
           },
           {
-            period: '2022',
+            period: 'Apr 2022 — Sep 2022',
             role: 'Full Stack Web Developer',
-            company: 'Elite Carpet Dry Cleaning',
+            company: 'Elite Carpet Dry Cleaning Pty Ltd',
             location: 'Australia · Remote',
-            summary: 'Built custom WordPress functionality, responsive layouts, location-aware content, design assets, documentation, and DNS configuration.'
+            summary: 'Combined custom WordPress development, responsive redesign work, creative production, documentation, and domain/DNS administration.',
+            highlights: [
+              'Built a custom WordPress plugin that served dynamic contact details, social links, and chat widgets based on visitor postcode, IP, or GPS location.',
+              'Redesigned the homepage and delivered full mobile responsiveness across viewports.',
+              'Produced InVision/Photoshop mockups, an animated email signature, internal standards, and nameserver/DNS updates.'
+            ]
           },
           {
-            period: '2020 — 2022',
-            role: 'Senior Web Developer',
+            period: 'Mar 2020 — Mar 2022',
+            role: 'Web Developer → Senior Web Developer',
             company: 'QL PTY LTD',
             location: 'Philippines · Remote',
-            summary: 'Handled technical SEO, GA/GTM implementation, front-end fixes, staging, migrations, SSL, DNS, and website maintenance.'
+            summary: 'Owned technical SEO, tracking implementation, hosting migrations, staging, infrastructure, and custom WordPress fixes.',
+            highlights: [
+              'Managed meta tags, canonicals, robots.txt, sitemaps, GTM, GA/GA4, and goal tracking, including SEO overrides through custom functions.php code.',
+              'Migrated sites across hosts, built staging environments, configured SSL/DNS, and managed G Suite email accounts.',
+              'Used Screaming Frog for technical site audits and issue tracking.'
+            ]
           },
           {
-            period: '2017 — 2019',
+            period: 'Dec 2017 — Dec 2019',
             role: 'Full Stack Web Developer',
             company: 'Blaze Online',
             location: 'Australia · Remote',
-            summary: 'Built WordPress and WooCommerce sites using PHP, JavaScript, CSS, Elementor, product workflows, performance optimization, and cross-browser QA.'
+            summary: 'Built and prepared WordPress and WooCommerce websites for client handoff, covering development, QA, infrastructure, and analytics setup.',
+            highlights: [
+              'Built WooCommerce e-commerce and catalog sites using Elementor and custom PHP functionality.',
+              'Owned cross-browser, front-end, and back-end QA before client handoff.',
+              'Handled backups, staging, domain setup, DNS, and Google Analytics / Webmaster Tools integration.'
+            ]
           }
         ],
         currentYear: new Date().getFullYear()
@@ -300,23 +754,17 @@
            * This preserves the V7 experience without letting its
            * entrance animations play invisibly behind the preloader.
            */
-          this.initLenis();
-          this.initMotion();
-          this.initGsapTextReveals();
+          this.initPremiumMotion();
           this.initCursor();
-          this.initCodePanel();
           if (!document.documentElement.classList.contains('low-motion')) {
-            this.bindProjectScrollMotion();
-            this.bindListingScrollMotion();
-            this.bindTilt();
-            this.initInteractiveScrollFx();
+            this.initCodePanel();
           }
 
           window.__PORTFOLIO_READY__ = true;
 
           window.dispatchEvent(
             new CustomEvent('portfolio:ready', {
-              detail: { version: '7.14.0' }
+              detail: { version: '9.0.0' }
             })
           );
 
@@ -329,7 +777,7 @@
 
               window.dispatchEvent(new Event('resize'));
 
-              console.info('[Portfolio V7.4] animations started after preloader', {
+              console.info('[Portfolio V9] animations started after preloader', {
                 gsap: !!window.gsap,
                 scrollTrigger: !!window.ScrollTrigger,
                 loaderRemoved: !document.getElementById('page-loader')
@@ -720,6 +1168,115 @@
             toggleActions: 'play reverse play reverse'
           });
         }
+      },
+
+      initPremiumMotion() {
+        if (!window.gsap || !window.ScrollTrigger) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (document.documentElement.classList.contains('low-motion')) return;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ease = 'power3.out';
+        const premiumTargets = [
+          '.section-head',
+          '.capability',
+          '.cms-card',
+          '.timeline-row',
+          '.statement-card',
+          '.contact-card',
+          '.portrait-wrap',
+          '.about-points > div'
+        ].join(',');
+
+        gsap.timeline({ defaults: { ease }, delay: .04 })
+          .fromTo('.site-header', { autoAlpha: 0, y: -16 }, { autoAlpha: 1, y: 0, duration: .65 })
+          .fromTo('.hero-copy > *',
+            { autoAlpha: 0, y: 28, scale: .985 },
+            { autoAlpha: 1, y: 0, scale: 1, duration: .78, stagger: .065 },
+            '-=.35')
+          .fromTo('.hero-code-panel',
+            { autoAlpha: 0, y: 38, scale: .965, rotateX: 5 },
+            { autoAlpha: 1, y: 0, scale: 1, rotateX: 0, duration: .95, ease: 'power4.out' },
+            '-=.68');
+
+        const heroTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom 25%',
+            scrub: .65
+          }
+        });
+
+        heroTimeline
+          .to('.hero-copy', { yPercent: -7, scale: .975, autoAlpha: .28, ease: 'none' }, 0)
+          .to('.hero-code-panel', { yPercent: 8, scale: .96, rotateX: -2.5, autoAlpha: .35, ease: 'none', transformPerspective: 1400 }, 0);
+
+        gsap.to('.scroll-progress', {
+          scaleX: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: document.documentElement,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: .18
+          }
+        });
+
+        gsap.utils.toArray('.project-card').forEach((card, index) => {
+          gsap.fromTo(card,
+            {
+              autoAlpha: 0,
+              y: 52,
+              scale: .965,
+              rotateX: 4,
+              transformPerspective: 1200,
+              transformOrigin: '50% 100%'
+            },
+            {
+              autoAlpha: 1,
+              y: 0,
+              scale: 1,
+              rotateX: 0,
+              duration: .88,
+              delay: (index % 3) * .055,
+              ease: 'power4.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 92%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+
+        gsap.utils.toArray(premiumTargets).forEach((el, index) => {
+          if (el.closest('.project-card')) return;
+          gsap.fromTo(el,
+            { autoAlpha: 0, y: 34, scale: .985 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              scale: 1,
+              duration: .8,
+              delay: (index % 3) * .035,
+              ease,
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 92%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+
+        const marquee = document.querySelector('.marquee');
+        if (marquee) {
+          gsap.to(marquee, { xPercent: -50, duration: 28, ease: 'none', repeat: -1 });
+        }
+
+        requestAnimationFrame(() => ScrollTrigger.refresh());
       },
 
       initLenis() {
@@ -1414,115 +1971,37 @@
 
         const shell = document.querySelector('.cursor-shell');
         const dot = document.querySelector('.cursor-dot');
-        const ring = document.querySelector('.cursor-ring');
-        const label = document.querySelector('.cursor-label');
+        if (!shell || !dot || window.__PORTFOLIO_CURSOR_LIGHT__) return;
 
-        if (!shell || !dot || !ring || !label) return;
-        if (window.__PORTFOLIO_CURSOR_LOOP__) return;
+        let x = window.innerWidth * .5;
+        let y = window.innerHeight * .5;
+        let frame = 0;
 
-        shell.classList.add('cursor-ready');
-
-        let mouseX = window.innerWidth * .5;
-        let mouseY = window.innerHeight * .5;
-        let dotX = mouseX;
-        let dotY = mouseY;
-        let ringX = mouseX;
-        let ringY = mouseY;
-        let rafId = 0;
-        let running = true;
-
-        /*
-         * Direct transform writes are cheaper than creating a GSAP tween
-         * for every pointermove. The ring still eases behind the pointer,
-         * but all of it happens inside one animation frame loop.
-         */
-        const render = () => {
-          if (!running) return;
-
-          dotX += (mouseX - dotX) * .72;
-          dotY += (mouseY - dotY) * .72;
-          ringX += (mouseX - ringX) * .28;
-          ringY += (mouseY - ringY) * .28;
-
-          dot.style.transform = `translate3d(${dotX}px,${dotY}px,0) translate(-50%,-50%)`;
-          ring.style.transform = `translate3d(${ringX}px,${ringY}px,0) translate(-50%,-50%)`;
-
-          rafId = requestAnimationFrame(render);
+        const draw = () => {
+          dot.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;
+          frame = 0;
         };
 
         const onMove = (event) => {
-          mouseX = event.clientX;
-          mouseY = event.clientY;
+          x = event.clientX;
+          y = event.clientY;
           shell.classList.add('cursor-ready');
-
-          /*
-           * Update the soft background spotlight at a lower cost:
-           * CSS variables only, no animation tween creation.
-           */
-          document.documentElement.style.setProperty('--mx', `${(mouseX / window.innerWidth) * 100}%`);
-          document.documentElement.style.setProperty('--my', `${(mouseY / window.innerHeight) * 100}%`);
+          if (!frame) frame = requestAnimationFrame(draw);
         };
 
-        const onDown = () => {
-          ring.classList.add('cursor-pressed');
-        };
-
-        const onUp = () => {
-          ring.classList.remove('cursor-pressed');
+        const setHover = (event) => {
+          shell.classList.toggle('is-active', !!event.target.closest('a,button,[role="button"]'));
         };
 
         window.addEventListener('pointermove', onMove, { passive: true });
-        window.addEventListener('pointerdown', onDown, { passive: true });
-        window.addEventListener('pointerup', onUp, { passive: true });
+        document.addEventListener('pointerover', setHover, { passive: true });
+        document.addEventListener('pointerout', setHover, { passive: true });
 
-        render();
-
-        window.__PORTFOLIO_CURSOR_LOOP__ = {
-          stop() {
-            running = false;
-            if (rafId) cancelAnimationFrame(rafId);
-            window.removeEventListener('pointermove', onMove);
-            window.removeEventListener('pointerdown', onDown);
-            window.removeEventListener('pointerup', onUp);
-          }
-        };
-
-        this.bindCursorTargets();
+        window.__PORTFOLIO_CURSOR_LIGHT__ = true;
       },
 
-
       bindCursorTargets() {
-        const shell = document.querySelector('.cursor-shell');
-        const label = document.querySelector('.cursor-label');
-
-        if (!shell || !label) return;
-
-        document.querySelectorAll('[data-cursor]').forEach((el) => {
-          if (el.dataset.cursorBound === '1') return;
-          el.dataset.cursorBound = '1';
-
-          el.addEventListener('pointerenter', () => {
-            label.textContent = el.dataset.cursor || '';
-            shell.classList.add('is-active');
-          });
-
-          el.addEventListener('pointerleave', () => {
-            shell.classList.remove('is-active');
-          });
-        });
-
-        document.querySelectorAll('p,h1,h2,h3,li').forEach((el) => {
-          if (el.dataset.textCursorBound === '1') return;
-          el.dataset.textCursorBound = '1';
-
-          el.addEventListener('pointerenter', () => {
-            shell.classList.add('is-text');
-          });
-
-          el.addEventListener('pointerleave', () => {
-            shell.classList.remove('is-text');
-          });
-        });
+        // Lightweight cursor uses event delegation; no per-element listeners required.
       },
 
       initCodePanel() {
@@ -1632,67 +2111,8 @@
           ease: 'sine.inOut'
         });
 
-        /* Mouse movement gives the entire editor a restrained 3D tilt. */
-        gsap.set(shell, { transformPerspective: 1200 });
-
-        const shellRy = gsap.quickTo(shell, 'rotateY', { duration: .38, ease: 'power3.out' });
-        const shellRx = gsap.quickTo(shell, 'rotateX', { duration: .38, ease: 'power3.out' });
-        const shellX = gsap.quickTo(shell, 'x', { duration: .38, ease: 'power3.out' });
-        const shellY = gsap.quickTo(shell, 'y', { duration: .38, ease: 'power3.out' });
-
-        const badgeTop = document.querySelector('.badge-top');
-        const badgeBottom = document.querySelector('.badge-bottom');
-
-        const badgeTopX = badgeTop ? gsap.quickTo(badgeTop, 'x', { duration: .38, ease: 'power3.out' }) : null;
-        const badgeTopY = badgeTop ? gsap.quickTo(badgeTop, 'y', { duration: .38, ease: 'power3.out' }) : null;
-        const badgeBottomX = badgeBottom ? gsap.quickTo(badgeBottom, 'x', { duration: .38, ease: 'power3.out' }) : null;
-        const badgeBottomY = badgeBottom ? gsap.quickTo(badgeBottom, 'y', { duration: .38, ease: 'power3.out' }) : null;
-
-        let panelRect = null;
-
-        panel.addEventListener('pointerenter', () => {
-          panelRect = panel.getBoundingClientRect();
-        }, { passive: true });
-
-        panel.addEventListener('pointermove', (event) => {
-          if (!panelRect) panelRect = panel.getBoundingClientRect();
-
-          const px = (event.clientX - panelRect.left) / panelRect.width - .5;
-          const py = (event.clientY - panelRect.top) / panelRect.height - .5;
-
-          shellRy(px * 5.5);
-          shellRx(-py * 5.5);
-          shellX(px * 5);
-          shellY(py * 4);
-
-          if (badgeTopX && badgeTopY) {
-            badgeTopX(px * 16);
-            badgeTopY(py * 10 - 8);
-          }
-
-          if (badgeBottomX && badgeBottomY) {
-            badgeBottomX(-px * 13);
-            badgeBottomY(-py * 8 + 9);
-          }
-        }, { passive: true });
-
-        panel.addEventListener('pointerleave', () => {
-          panelRect = null;
-          shellRy(0);
-          shellRx(0);
-          shellX(0);
-          shellY(0);
-
-          if (badgeTopX && badgeTopY) {
-            badgeTopX(0);
-            badgeTopY(-8);
-          }
-
-          if (badgeBottomX && badgeBottomY) {
-            badgeBottomX(0);
-            badgeBottomY(9);
-          }
-        }, { passive: true });
+        /* Pointer-driven editor tilt removed for lower input latency.
+           CSS now provides a restrained hover lift without continuous tracking. */
       },
 
 
