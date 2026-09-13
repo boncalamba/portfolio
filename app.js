@@ -64,7 +64,7 @@
           {
             name: "Phenyx",
             short: "PHE",
-            category: "Built from scratch · WordPress",
+            category: "Changes & maintenance · WordPress",
             workType: "Website Changes and Maintenance",
             type: ["Build from Scratch", "WordPress", "Marketing"],
             url: "https://phenyx.com.au/",
