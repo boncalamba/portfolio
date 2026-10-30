@@ -3,636 +3,96 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f3f4ee">
-  <script>
-    (() => {
-      try {
-        document.documentElement.dataset.theme = localStorage.getItem('bon-theme') === 'dark' ? 'dark' : 'light';
-      } catch (_) {
-        document.documentElement.dataset.theme = 'light';
-      }
-    })();
-  </script>
-
-  <!-- PRIVATE PORTFOLIO: intentionally excluded from search indexing -->
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-  <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-
-  <meta name="description" content="Portfolio of Bon Jun Calamba — Senior WordPress & Full-Stack Web Developer with 7+ years of experience across WordPress, WooCommerce, SEO, performance, CRM automation, hosting, and front-end development.">
+  <meta name="theme-color" content="#0a090a">
+  <meta name="description" content="Bon Jun Calamba — Senior WordPress & Full-Stack Developer. 7+ years building websites, WooCommerce, technical SEO, automation and digital experiences for teams worldwide.">
   <meta name="author" content="Bon Jun Calamba">
-  <meta property="og:title" content="Bon Jun Calamba — Senior WordPress & Full-Stack Web Developer">
-  <meta property="og:description" content="7+ years of WordPress and full-stack web development across Australia, the US, and the Philippines — including e-commerce, technical SEO, performance, infrastructure, CRM automation, and front-end development.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-card.svg">
-
-  <title>Bon Jun Calamba — Senior WordPress & Full-Stack Web Developer</title>
-  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
-  <link rel="icon" href="assets/favicon-32.png?v=2" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2" sizes="180x180">
-  <link rel="stylesheet" href="styles.css?v=10.0.0">
+  <meta property="og:title" content="Bon Jun Calamba | WordPress & Full-Stack Developer">
+  <meta property="og:description" content="Websites that look sharp, work hard and keep moving forward.">
+  <meta property="og:image" content="https://boncalamba.github.io/portfolio/assets/og-card.png">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:url" content="https://boncalamba.github.io/portfolio/">
+  <link rel="canonical" href="https://boncalamba.github.io/portfolio/">
+  <title>Bon Jun Calamba — WordPress & Full-Stack Developer</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.0.0">
+  <script defer src="config.js"></script>
+  <script defer src="data/fallback.js"></script>
+  <script defer src="app.js?v=1.0.0"></script>
 </head>
-
 <body>
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="scroll-progress" aria-hidden="true"></div>
-
-  <div class="page-loader" id="page-loader" aria-hidden="true">
-    <div class="loader-grid"></div>
-    <div class="loader-copy">
-      <span class="loader-kicker">BON / DEV</span>
-      <span class="loader-percent" id="loader-percent">000</span>
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-progress" id="site-progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="pointer-glow" id="pointer-glow" aria-hidden="true"></div>
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot-content"><span class="boot-tag">INITIALIZING // PORTFOLIO</span><strong>B<span>.</span></strong><span class="boot-caption">BON JUN CALAMBA — DIGITAL SYSTEMS</span></div>
+    <div class="boot-line"><i id="boot-bar"></i></div>
   </div>
 
-  <div class="cursor-shell" aria-hidden="true">
-    <div class="cursor-dot"></div>
-  </div>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Bon Jun Calamba — Home"><span class="brand-box">B<span>·</span></span><span class="brand-wordmark">BON CALAMBA<small>DEVELOPER / BUILDER</small></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#work">WORK</a><a href="#expertise">EXPERTISE</a><a href="#experience">STORY</a><a href="#about">ABOUT</a></nav>
+    <a class="header-connect" href="#contact">LET'S CONNECT <span aria-hidden="true">↗</span></a>
+    <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" inert><div class="mobile-nav-links"><a href="#work">WORK <span>01</span></a><a href="#expertise">EXPERTISE <span>02</span></a><a href="#experience">STORY <span>03</span></a><a href="#about">ABOUT <span>04</span></a><a href="#contact">CONTACT <span>05</span></a></div><p>BON / INTERACTIVE PORTFOLIO</p></nav>
 
-  <div id="app" v-cloak>
-    <header class="site-header">
-      <a class="brand smooth-link" href="#top" aria-label="Bon Jun Calamba home" data-cursor="HOME">
-        <span class="brand-mark">B</span>
-        <span class="brand-copy">
-          <strong>Bon Jun Calamba</strong>
-          <small>Senior WordPress & Full-Stack Developer</small>
-        </span>
-      </a>
-
-      <div class="header-status">
-        <span class="status-dot"></span>
-        <span>Open to Remote / WFH</span>
+  <main id="main">
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <canvas id="contours" class="contours" aria-hidden="true"></canvas>
+      <div class="hero-orbit" aria-hidden="true"><span class="orbit-1"></span><span class="orbit-2"></span><span class="orbit-3"></span></div>
+      <div class="hero-vertical left" aria-hidden="true">DESIGNED TO BUILD // ENGINEERED TO PERFORM</div>
+      <div class="hero-vertical right" aria-hidden="true">AVAILABLE WORLDWIDE / 2026</div>
+      <div class="hero-layout shell">
+        <div class="hero-content">
+          <div class="hero-eyebrow reveal"><span class="live-pulse"></span><span data-field="availability">Available for remote opportunities</span><span class="eyebrow-index">/ PORTFOLIO—001</span></div>
+          <p class="hero-kicker reveal" data-field="role">SENIOR WORDPRESS &amp; FULL-STACK DEVELOPER</p>
+          <h1 id="hero-title" class="hero-title" aria-label="Bon Jun Calamba"><span class="hero-title-row">BON JUN<span class="title-stroke">/</span></span><span class="hero-title-row title-gradient">CALAMBA<span class="title-dot">.</span></span></h1>
+          <div class="hero-bottom-text reveal"><p class="hero-intro" data-field="intro">I build, fix and scale WordPress-powered experiences — from custom development and technical SEO to e-commerce, performance and automation.</p><div class="hero-links"><a class="btn btn-solid" href="#work"><span>EXPLORE MY WORK</span><span aria-hidden="true">↗</span></a><a class="btn btn-outline" data-link="resume_url" href="assets/Bon-Jun-Calamba-Resume.pdf" target="_blank" rel="noopener"><span>DOWNLOAD CV</span><span aria-hidden="true">↓</span></a></div></div>
+        </div>
+        <div class="hero-visual" aria-label="Portrait of Bon Jun Calamba">
+          <div class="portrait-halo" aria-hidden="true"></div>
+          <div class="hero-portrait-window"><img id="portrait" src="assets/bon-jun-calamba-portrait.webp" alt="Bon Jun Calamba portrait" fetchpriority="high" decoding="async"></div>
+          <div class="portrait-marker marker-top" aria-hidden="true">[ BJC_001 ]<span>01 / PROFILE</span></div>
+          <div class="portrait-marker marker-bottom" aria-hidden="true"><span>PHILIPPINES / REMOTE</span><strong>DEVELOPER_07+</strong></div>
+          <div class="portrait-geometry" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
       </div>
+      <div class="hero-footer shell"><div class="hero-ticker"><span class="ticker-label">CORE STACK</span><div class="ticker-track" id="hero-specialties"><span>WORDPRESS</span><span class="tick-star">✳</span><span>WOOCOMMERCE</span><span class="tick-star">✳</span><span>TECHNICAL SEO</span><span class="tick-star">✳</span><span>GOHIGHLEVEL</span></div></div><a href="#work" class="scroll-indicator">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
+    </section>
 
-      <button class="menu-toggle" :class="{ active: menuOpen }" @click.stop="menuOpen = !menuOpen" :aria-expanded="menuOpen.toString()" :aria-label="menuOpen ? 'Close navigation' : 'Open navigation'" aria-controls="primary-navigation" data-cursor="MENU">
-        <span></span><span></span>
-      </button>
+    <div class="stack-layout" id="stack-layout">
+      <section class="stats-section" id="overview" aria-label="Quick statistics"><div class="shell stats-grid"><div class="stat-item" data-reveal><strong data-field="years_label">07+</strong><span data-field="years_caption">YEARS IN WEB DEVELOPMENT</span></div><div class="stat-item" data-reveal><strong data-field="projects_label">33</strong><span data-field="projects_caption">WEBSITE PROJECTS</span></div><div class="stat-item" data-reveal><strong data-field="region_label">03</strong><span data-field="region_caption">REGIONS SERVED</span></div><div class="stats-note"><span class="bracket-label">[ THE SHORT VERSION ]</span><p>BUILDING DIGITAL THINGS THAT <em>ACTUALLY WORK.</em></p></div></div></section>
 
-      <nav id="primary-navigation" class="nav" :class="{ open: menuOpen }" aria-label="Primary navigation">
-        <a href="#work" class="smooth-link" @click="menuOpen = false" data-cursor="WORK">Work</a>
-        <a href="#capabilities" class="smooth-link" @click="menuOpen = false" data-cursor="SKILLS">Capabilities</a>
-        <a href="#cms" class="smooth-link" @click="menuOpen = false" data-cursor="CMS">CMS</a>
-        <a href="#experience" class="smooth-link" @click="menuOpen = false" data-cursor="TIMELINE">Experience</a>
-        <a href="#contact" class="nav-cta magnetic smooth-link" @click="menuOpen = false" data-cursor="TALK">Let’s talk</a>
-      </nav>
-    </header>
-
-    <button class="theme-toggle" :class="{ 'menu-hidden': menuOpen }" type="button" @click="toggleTheme" :aria-pressed="(theme === 'dark').toString()" :aria-label="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'" data-cursor="THEME">
-      <span class="theme-icon theme-sun" aria-hidden="true">☀</span>
-      <span class="theme-icon theme-moon" aria-hidden="true">☾</span>
-      <span class="theme-label" aria-hidden="true">{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
-    </button>
-
-    <main id="top">
-      <section class="hero section-shell">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow hero-reveal">7+ years · Philippines based · Working globally</p>
-
-            <h1 class="hero-title gsap-text-heading">
-              I own websites end to end.
-              <span class="accent-line">Build. Optimize. Grow.</span>
-            </h1>
-
-            <p class="hero-lead hero-reveal">
-              WordPress-focused developer with 7+ years building, optimizing, and maintaining client websites for agencies and businesses across Australia, the US, and the Philippines. I work from initial build and custom functionality through SEO, performance, hosting, automation, QA, and long-term maintenance.
-            </p>
-
-            <div class="hero-actions hero-reveal">
-              <a class="button button-primary magnetic smooth-link" href="#work" data-cursor="EXPLORE">View selected work</a>
-              <a class="button button-ghost" href="assets/Bon-Jun-Calamba-Resume.pdf" target="_blank" rel="noopener" data-cursor="PDF">Download résumé</a>
-            </div>
-
-            <ul class="hero-stack hero-reveal" aria-label="Core technologies">
-              <li>WordPress</li>
-              <li>WooCommerce</li>
-              <li>Elementor Pro</li>
-              <li>PHP</li>
-              <li>Technical SEO</li>
-              <li>GoHighLevel</li>
-            </ul>
-          </div>
-
-          <aside class="hero-code-panel hero-reveal" aria-label="Animated developer code preview">
-            <div class="editor-glow glow-a" aria-hidden="true"></div>
-            <div class="editor-glow glow-b" aria-hidden="true"></div>
-
-            <div class="editor-shell" id="editor-shell">
-              <div class="editor-toolbar">
-                <div class="editor-dots" aria-hidden="true">
-                  <span></span><span></span><span></span>
-                </div>
-
-                <div class="editor-tabs">
-                  <span class="editor-tab active">
-                    <i class="tab-dot js-dot"></i>
-                    portfolio.js
-                  </span>
-                  <span class="editor-tab">
-                    <i class="tab-dot php-dot"></i>
-                    functions.php
-                  </span>
-                </div>
-
-                <div class="editor-state">
-                  <span class="status-dot"></span>
-                  live
-                </div>
-              </div>
-
-              <div class="editor-breadcrumb">
-                <span>src</span><b>›</b><span>portfolio</span><b>›</b><strong>portfolio.js</strong>
-              </div>
-
-              <div class="editor-body">
-                <div class="active-line-marker" aria-hidden="true"></div>
-
-                <div class="code-rail" aria-hidden="true">
-                  <span>01</span><span>02</span><span>03</span><span>04</span>
-                  <span>05</span><span>06</span><span>07</span><span>08</span>
-                  <span>09</span><span>10</span><span>11</span><span>12</span>
-                  <span>13</span>
-                </div>
-
-                <pre class="code-view" aria-hidden="true"><code>
-<span class="code-line"><span class="token-purple">const</span> <span class="token-blue">developer</span> = {</span>
-<span class="code-line">  name: <span class="token-green">'Bon Jun Calamba'</span>,</span>
-<span class="code-line">  role: <span class="token-green">'Senior WP & Full-Stack Developer'</span>,</span>
-<span class="code-line">  stack: [<span class="token-green">'WP'</span>, <span class="token-green">'Woo'</span>, <span class="token-green">'PHP'</span>, <span class="token-green">'SEO'</span>],</span>
-<span class="code-line">  <span class="token-blue">build</span>(site) {</span>
-<span class="code-line">    <span class="token-purple">return</span> <span class="token-yellow">optimize</span>(site)</span>
-<span class="code-line">      .<span class="token-yellow">animate</span>()</span>
-<span class="code-line">      .<span class="token-yellow">test</span>()</span>
-<span class="code-line">      .<span class="token-yellow">ship</span>();</span>
-<span class="code-line">  }</span>
-<span class="code-line">};</span>
-<span class="code-line"></span>
-<span class="code-line"><span class="token-purple">gsap</span>.<span class="token-yellow">to</span>(<span class="token-green">'.experience'</span>, { <span class="token-blue">scrollTrigger</span>: <span class="token-green">'smooth'</span> });</span>
-                </code></pre>
-              </div>
-
-              <div class="terminal-panel">
-                <div class="terminal-head">
-                  <span>TERMINAL</span>
-                  <span class="terminal-tools">⌁ &nbsp;＋ &nbsp;⌄</span>
-                </div>
-
-                <div class="terminal-content">
-                  <div class="terminal-line">
-                    <span class="terminal-prompt">➜</span>
-                    <span class="terminal-path">~/portfolio</span>
-                    <span class="terminal-command">npm run build:experience</span>
-                    <span class="terminal-caret"></span>
-                  </div>
-                  <div class="terminal-output output-one">
-                    <span class="terminal-ok">✓</span> WordPress systems optimized
-                  </div>
-                  <div class="terminal-output output-two">
-                    <span class="terminal-ok">✓</span> GSAP motion compiled
-                  </div>
-                  <div class="terminal-output output-three">
-                    <span class="terminal-ok">✓</span> Ready to ship
-                    <span class="build-time">0.84s</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="editor-footer">
-                <span>Ln 13, Col 48</span>
-                <span>Spaces: 2</span>
-                <span>UTF-8</span>
-                <span>JavaScript</span>
-              </div>
-            </div>
-
-            <div class="code-badge badge-top" aria-hidden="true">
-              <span>CORE WEB VITALS</span>
-              <strong>PASS</strong>
-            </div>
-
-            <div class="code-badge badge-bottom" aria-hidden="true">
-              <span>BUILD MODE</span>
-              <strong>PRODUCTION</strong>
-            </div>
-
-            <div class="code-panel-meta">
-              <span>Animated code environment</span>
-              <span>Move your cursor</span>
-            </div>
-          </aside>
-        </div>
-
-        <div class="hero-scroll-cue hero-reveal" aria-hidden="true">
-          <span>Scroll</span>
-          <i></i>
-        </div>
-
-        <div class="hero-orb orb-one" aria-hidden="true"></div>
-        <div class="hero-orb orb-two" aria-hidden="true"></div>
-      </section>
-
-      <section class="recruiter-proof section-shell" aria-label="Career highlights">
-        <div class="proof-card reveal" data-anim="up">
-          <strong>7+ years</strong>
-          <span>WordPress-focused development</span>
-        </div>
-        <div class="proof-card reveal" data-anim="up">
-          <strong>AU · US · PH</strong>
-          <span>Agency and <br>business clients</span>
-        </div>
-        <div class="proof-card reveal" data-anim="up">
-          <strong>End-to-end</strong>
-          <span>Build, SEO, performance & infrastructure</span>
-        </div>
-        <div class="proof-card reveal" data-anim="up">
-          <strong>Remote-first</strong>
-          <span>Distributed teams & deadline-driven delivery</span>
+      <section class="work-section section-padding" id="work" aria-labelledby="work-title">
+        <div class="checker-seam" aria-hidden="true"></div>
+        <div class="shell"><div class="section-heading" data-reveal><div><span class="section-number">01 / SELECTED WORK</span><h2 id="work-title" class="section-title">BUILT TO <em>MATTER.</em></h2></div><div class="section-aside"><span class="bracket-label">[ THE WORK SPEAKS ]</span><p>Websites, stores, and digital experiences developed and supported for brands across industries.</p></div></div>
+          <div class="work-toolbar" data-reveal><div class="filter-row" id="filters" role="group" aria-label="Filter projects"><button type="button" class="filter active" data-filter="featured" aria-pressed="true">SELECTED <span>06</span></button><button type="button" class="filter" data-filter="all" aria-pressed="false">ALL PROJECTS</button><button type="button" class="filter" data-filter="build" aria-pressed="false">NEW BUILDS</button><button type="button" class="filter" data-filter="maintenance" aria-pressed="false">MAINTENANCE</button><button type="button" class="filter" data-filter="ecommerce" aria-pressed="false">E-COMMERCE</button></div><span id="work-count" class="count-readout">06 / 33 PROJECTS</span></div>
+          <div class="project-grid" id="project-grid" aria-live="polite"><p class="loading-data">LOADING PROJECTS <span>...</span></p></div>
+          <div class="work-end"><span>EVERY PROJECT, A NEW PROBLEM SOLVED.</span><button type="button" id="view-all" class="text-button">VIEW ALL PROJECTS <span>↗</span></button></div>
         </div>
       </section>
+    </div>
 
-      <section class="marquee-wrap" aria-label="Specialties">
-        <div class="marquee">
-          <span>WORDPRESS ENGINEERING</span><i>✦</i>
-          <span>ECOMMERCE</span><i>✦</i>
-          <span>PERFORMANCE</span><i>✦</i>
-          <span>TECHNICAL SEO</span><i>✦</i>
-          <span>GSAP MOTION</span><i>✦</i>
-          <span>HOSTING & DNS</span><i>✦</i>
-          <span>WORDPRESS ENGINEERING</span><i>✦</i>
-          <span>ECOMMERCE</span><i>✦</i>
-          <span>PERFORMANCE</span><i>✦</i>
-          <span>TECHNICAL SEO</span><i>✦</i>
-          <span>GSAP MOTION</span><i>✦</i>
-          <span>HOSTING & DNS</span><i>✦</i>
-        </div>
-      </section>
+    <section class="systems-section section-padding" id="expertise" aria-labelledby="expertise-title">
+      <div class="system-deco" aria-hidden="true"><div class="radar-ring radar-one"></div><div class="radar-ring radar-two"></div><div class="radar-ring radar-three"></div><div class="radar-axis horizontal"></div><div class="radar-axis vertical"></div><div class="radar-cross">+</div></div>
+      <div class="shell systems-inner"><div class="section-heading" data-reveal><div><span class="section-number">02 / WHAT I DO</span><h2 id="expertise-title" class="section-title">ENGINEERED <em>TO DELIVER.</em></h2></div><div class="section-aside"><span class="bracket-label">[ FULL-STACK THINKING ]</span><p>One developer. Multiple disciplines. A consistent standard of craftsmanship.</p></div></div>
+        <div class="system-terminal" data-reveal><div class="system-terminal-top"><span><i class="terminal-live"></i> SYSTEM CAPABILITIES / ACTIVE</span><span>STATUS: <strong>OPERATIONAL</strong></span></div><div class="capability-grid" id="capability-grid"><p class="loading-data">LOADING CAPABILITIES ...</p></div><div class="terminal-bottom"><span>PROCESS → BUILD → TEST → OPTIMIZE → SHIP</span><span>SYS.OK_2026</span></div></div>
+      </div>
+    </section>
 
-      <section id="work" class="section-shell section-pad section-transition">
-        <div class="section-wipe" aria-hidden="true"></div>
+    <section class="story-section section-padding" id="experience" aria-labelledby="story-title"><div class="shell"><div class="section-heading" data-reveal><div><span class="section-number">03 / THE JOURNEY</span><h2 id="story-title" class="section-title">THE ROAD <em>SO FAR.</em></h2></div><div class="section-aside"><span class="bracket-label">[ CAREER TIMELINE ]</span><p>Years of building, shipping, solving and learning alongside distributed teams.</p></div></div><div class="timeline" id="timeline"><p class="loading-data">LOADING EXPERIENCE ...</p></div></div></section>
 
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Selected work</p>
-            <h2 class="split-heading gsap-text-heading">Built, improved, maintained.</h2>
-          </div>
-          <p class="section-intro">
-            {{ projects.length }} recorded website projects covering full builds, redesigns, maintenance, e-commerce, and ongoing client work.
-          </p>
-        </div>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="shell about-layout"><div class="about-heading" data-reveal><span class="section-number">04 / BEHIND THE WORK</span><h2 id="about-title">BUILD.<br><span>BREAK.</span><br>BETTER.</h2><div class="about-asterisk" aria-hidden="true">✳</div></div><div class="about-copy" data-reveal><span class="bracket-label">[ WHO'S BEHIND THE CODE? ]</span><h3 data-field="about_title">Built to solve. Not just to ship.</h3><p data-field="about_text">With 7+ years of hands-on experience, I help agencies and brands move faster with dependable WordPress development, technical troubleshooting, front-end polish, integrations and long-term support.</p><div class="about-info"><div><span>BASE</span><strong data-field="location">PHILIPPINES · REMOTE WORLDWIDE</strong></div><div><span>EDUCATION</span><strong data-field="education">BS INFORMATION TECHNOLOGY</strong></div><div><span>FOCUS</span><strong>DEVELOPMENT / SEO / AUTOMATION</strong></div></div><a href="#contact" class="about-link">LET'S BUILD SOMETHING <span>↗</span></a></div></div></section>
 
-        <div class="filters reveal" data-anim="scale" aria-label="Project filters">
-          <button
-            v-for="filter in filters"
-            :key="filter"
-            @click="selectedFilter = filter"
-            :class="{ active: selectedFilter === filter }"
-            :data-cursor="filter.toUpperCase()"
-          >
-            {{ filter }}
-          </button>
-        </div>
-
-        <div class="project-grid">
-          <article
-            v-for="project in filteredProjects"
-            :key="project.name"
-            class="project-card reveal-card tilt-card"
-          >
-            <a :href="project.url || null" :target="project.url ? '_blank' : null" :rel="project.url ? 'noopener' : null" class="project-link" :class="{ 'project-link-disabled': !project.url }" :data-cursor="project.url ? 'VIEW' : 'PROJECT'">
-              <div
-                class="project-visual"
-                :class="['tone-' + project.tone, { 'has-site-image': project.imageLoaded && !project.imageFailed }]"
-              >
-                <img
-                  v-if="project.image && !project.imageFailed"
-                  class="project-site-image"
-                  :src="project.image"
-                  :alt="project.name + ' website preview'"
-                  loading="lazy"
-                  fetchpriority="low"
-                  decoding="async"
-                  referrerpolicy="no-referrer"
-                  @load="project.imageLoaded = true"
-                  @error="project.imageFailed = true"
-                >
-                <div class="browser-chrome"><span></span><span></span><span></span></div>
-                <div class="project-scanline" aria-hidden="true"></div>
-                <div class="visual-word">{{ project.short }}</div>
-                <div class="visual-line"></div>
-                <div class="visual-line short"></div>
-              </div>
-
-              <div class="project-meta">
-                <div>
-                  <p>{{ project.category }}</p>
-                  <h3>{{ project.name }}</h3>
-                </div>
-                <span class="arrow">↗</span>
-              </div>
-
-              <p class="project-description">{{ project.description }}</p>
-
-              <ul class="tag-list">
-                <li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
-              </ul>
-            </a>
-          </article>
-        </div>
-      </section>
-
-
-      <section id="about-visual" class="about-visual section-shell section-pad section-transition">
-        <div class="section-wipe" aria-hidden="true"></div>
-
-        <div class="about-visual-grid">
-          <div class="about-copy reveal">
-            <p class="eyebrow">Developer profile</p>
-            <h2 class="split-heading">A builder who can move between code, UX and client goals.</h2>
-            <p class="section-intro">
-              I’m comfortable owning a site from initial build and theme/plugin development through SEO, performance, hosting, DNS, Cloudflare, integrations, and ongoing maintenance. My agency background means I can move between technical requirements, marketing goals, client requests, and production deadlines without losing the bigger picture.
-            </p>
-
-            <div class="about-points">
-              <div><span>01</span><strong>Own</strong><small>From setup and build through launch and maintenance</small></div>
-              <div><span>02</span><strong>Improve</strong><small>SEO, conversion, speed, tracking and usability</small></div>
-              <div><span>03</span><strong>Collaborate</strong><small>Remote-first delivery with marketing, design and operations teams</small></div>
-            </div>
-          </div>
-
-          <div class="portrait-wrap reveal-card" data-cursor="PROFILE">
-            <div class="portrait-frame">
-              <img src="assets/bon-jun-calamba-portrait.webp" alt="Bon Jun Calamba, Senior WordPress & Full-Stack Web Developer">
-              <div class="portrait-sheen" aria-hidden="true"></div>
-              <div class="portrait-gridlines" aria-hidden="true"></div>
-            </div>
-            <div class="portrait-meta">
-              <span>Remote-first · Open to WFH</span>
-              <strong>Bon Jun Calamba</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="capabilities" class="section-shell section-pad section-transition">
-        <div class="section-wipe" aria-hidden="true"></div>
-
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Capabilities</p>
-            <h2 class="split-heading gsap-text-heading">From brief to browser.</h2>
-          </div>
-          <p class="section-intro">
-            A practical full-stack skill set for teams that need one developer who can handle WordPress delivery, front-end and back-end work, technical SEO, performance, hosting, integrations, automation, debugging, and cross-browser QA.
-          </p>
-        </div>
-
-        <div class="capability-grid">
-          <article v-for="(capability, index) in capabilities" :key="capability.title" class="capability reveal-card" :data-anim="index % 2 === 0 ? 'up' : 'scale'">
-            <span class="capability-num">0{{ index + 1 }}</span>
-            <h3>{{ capability.title }}</h3>
-            <p>{{ capability.description }}</p>
-            <ul>
-              <li v-for="item in capability.items" :key="item">{{ item }}</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-
-      <section id="cms" class="section-shell section-pad cms-section section-transition">
-        <div class="section-wipe" aria-hidden="true"></div>
-
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">CMS & platform experience</p>
-            <h2 class="split-heading gsap-text-heading">Platforms I work in every week.</h2>
-          </div>
-          <p class="section-intro">
-            Production experience across WordPress, e-commerce, visual builders, custom fields, funnels, CRM workflows, and ongoing client maintenance.
-          </p>
-        </div>
-
-        <div class="cms-grid">
-          <article class="cms-card">
-            <div class="cms-logo-plate">
-              <span class="cms-logo-fallback" aria-hidden="true">WP</span><img src="https://cdn.simpleicons.org/wordpress" alt="WordPress logo" loading="lazy" onerror="this.style.display=\'none\'">
-            </div>
-            <div class="cms-card-copy">
-              <span class="cms-level">7+ years</span>
-              <h3>WordPress</h3>
-              <p>Custom PHP, themes, plugins, ACF, CPTs, Elementor, performance, technical SEO, maintenance, migrations, and troubleshooting.</p>
-            </div>
-          </article>
-
-          <article class="cms-card">
-            <div class="cms-logo-plate">
-              <span class="cms-logo-fallback" aria-hidden="true">WC</span><img src="https://cdn.simpleicons.org/woocommerce" alt="WooCommerce logo" loading="lazy" onerror="this.style.display=\'none\'">
-            </div>
-            <div class="cms-card-copy">
-              <span class="cms-level">Production e-commerce</span>
-              <h3>WooCommerce</h3>
-              <p>Catalog builds, product imports and exports, pricing updates, templates, custom PHP, merchandising, QA, and store maintenance.</p>
-            </div>
-          </article>
-
-          <article class="cms-card">
-            <div class="cms-logo-plate">
-              <span class="cms-logo-fallback" aria-hidden="true">S</span><img src="https://cdn.simpleicons.org/shopify" alt="Shopify logo" loading="lazy" onerror="this.style.display=\'none\'">
-            </div>
-            <div class="cms-card-copy">
-              <span class="cms-level">Client e-commerce</span>
-              <h3>Shopify</h3>
-              <p>Storefront updates, theme and section work, product and collection content, responsive improvements, and ongoing maintenance.</p>
-            </div>
-          </article>
-
-          <article class="cms-card">
-            <div class="cms-logo-plate">
-              <span class="cms-logo-fallback" aria-hidden="true">W</span><img src="https://cdn.simpleicons.org/webflow" alt="Webflow logo" loading="lazy" onerror="this.style.display=\'none\'">
-            </div>
-            <div class="cms-card-copy">
-              <span class="cms-level">Client builds</span>
-              <h3>Webflow</h3>
-              <p>Responsive page builds, CMS content, blog and landing-page implementation, custom interactions, and front-end refinements.</p>
-            </div>
-          </article>
-          <article class="cms-card">
-            <div class="cms-logo-plate">
-              <span class="cms-logo-fallback" aria-hidden="true">EA</span><img src="https://cdn.simpleicons.org/elementor" alt="Elementor logo" loading="lazy" onerror="this.style.display='none'">
-            </div>
-            <div class="cms-card-copy">
-              <span class="cms-level">Advanced WordPress builds</span>
-              <h3>Elementor Pro + ACF Pro</h3>
-              <p>Responsive component builds, dynamic templates, custom fields, CPT-driven content, reusable sections, custom CSS/JavaScript, and maintainable editor experiences.</p>
-            </div>
-          </article>
-
-          <article class="cms-card">
-            <div class="cms-logo-plate highlevel-plate">
-              <span class="cms-logo-fallback" aria-hidden="true">GHL</span>
-              <img class="ghl-logo" src="https://assets.cdn.filesafe.space/zELBHkVp0JPbbLvKIlF5/media/690a5f4a57ea175183408da2.png" alt="Official HighLevel logo" loading="lazy" onerror="this.style.display=\'none\'">
-            </div>
-            <div class="cms-card-copy">
-              <span class="cms-level">Funnels, CRM & automation</span>
-              <h3>GoHighLevel</h3>
-              <p>Landing pages, forms, CRM workflows, lead routing, follow-up automation, custom CSS/JavaScript, responsive QA, and conversion-focused campaign work.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="horizontal-lab section-transition" aria-label="Interactive development principles">
-        <div class="section-wipe" aria-hidden="true"></div>
-        <div class="horizontal-pin">
-          <div class="horizontal-track">
-            <article class="lab-panel">
-              <span class="lab-index">01</span>
-              <p>Diagnose before touching code.</p>
-            </article>
-            <article class="lab-panel">
-              <span class="lab-index">02</span>
-              <p>Build for maintainability, not just launch day.</p>
-            </article>
-            <article class="lab-panel">
-              <span class="lab-index">03</span>
-              <p>Make motion support the interface.</p>
-            </article>
-            <article class="lab-panel">
-              <span class="lab-index">04</span>
-              <p>Measure performance after every important change.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" class="section-shell section-pad section-transition">
-        <div class="section-wipe" aria-hidden="true"></div>
-
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Professional experience</p>
-            <h2 class="split-heading gsap-text-heading">Remote web delivery since 2017.</h2>
-          </div>
-        </div>
-
-        <div class="timeline">
-          <article v-for="(job, index) in experience" :key="job.company" class="timeline-row reveal" :data-anim="index % 2 === 0 ? 'left' : 'right'">
-            <div class="timeline-date">{{ job.period }}</div>
-            <div class="timeline-role">
-              <h3>{{ job.role }}</h3>
-              <p>{{ job.company }} · {{ job.location }}</p>
-            </div>
-            <div class="timeline-copy">
-              <p class="timeline-summary">{{ job.summary }}</p>
-              <ul v-if="job.highlights && job.highlights.length" class="timeline-highlights">
-                <li v-for="highlight in job.highlights" :key="highlight">{{ highlight }}</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="career-details section-shell section-pad section-transition" aria-label="Education and work profile">
-        <div class="section-wipe" aria-hidden="true"></div>
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Background</p>
-            <h2 class="split-heading gsap-text-heading">Qualified, fluent, remote-ready.</h2>
-          </div>
-          <p class="section-intro">A BS in Information Technology, fluent professional English, and years of remote collaboration with teams and clients across multiple markets.</p>
-        </div>
-        <div class="career-detail-grid">
-          <article class="career-detail-card reveal-card">
-            <span>Education</span>
-            <h3>BS in Information Technology</h3>
-            <p>Father Saturnino Urios University, Philippines</p>
-            <strong>2017</strong>
-          </article>
-          <article class="career-detail-card reveal-card">
-            <span>Language</span>
-            <h3>English — Fluent</h3>
-            <p>Spoken 9/10 · Written 9/10</p>
-            <strong>Professional communication</strong>
-          </article>
-          <article class="career-detail-card reveal-card">
-            <span>Work preference</span>
-            <h3>Remote / WFH</h3>
-            <p>Experienced working directly with distributed teams, agencies, clients, marketing, design and operations.</p>
-            <strong>Philippines based</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="statement section-shell section-pad">
-        <div class="statement-card reveal" data-anim="blur">
-          <p class="eyebrow">How I work</p>
-          <p class="statement-text">
-            One developer who can build, troubleshoot, optimize, communicate, and maintain — without handing every problem to a different specialist.
-          </p>
-          <div class="statement-steps">
-            <span>01 Own</span>
-            <span>02 Communicate</span>
-            <span>03 QA</span>
-            <span>04 Improve</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact section-shell section-pad section-transition">
-        <div class="section-wipe" aria-hidden="true"></div>
-
-        <div class="contact-card reveal" data-anim="scale">
-          <p class="eyebrow">Contact</p>
-          <h2 class="gsap-text-heading">Need a developer who can own delivery end to end?</h2>
-          <p>
-            I’m open to senior WordPress, full-stack web, e-commerce, SEO-focused development, and long-term remote / WFH opportunities where I can take responsibility from build through optimization and ongoing support.
-          </p>
-
-          <div class="contact-actions">
-            <a class="button button-primary magnetic" href="mailto:bonjun.calamba@gmail.com" data-cursor="EMAIL">
-              Email me
-            </a>
-            <a class="button button-ghost" href="https://wa.me/639074032640" target="_blank" rel="noopener" data-cursor="WHATSAPP">
-              WhatsApp
-            </a>
-            <a class="button button-ghost" href="viber://chat?number=%2B639074032640" data-cursor="VIBER">
-              Viber
-            </a>
-            <a class="button button-ghost" href="https://www.linkedin.com/in/boncalamba/" target="_blank" rel="noopener" data-cursor="LINKEDIN">
-              LinkedIn ↗
-            </a>
-            <a class="button button-ghost" href="assets/Bon-Jun-Calamba-Resume.pdf" target="_blank" rel="noopener" data-cursor="PDF">
-              Résumé PDF ↗
-            </a>
-          </div>
-
-          <div class="contact-number">Alegria, Surigao Del Norte, Philippines · +63 907 403 2640 · WhatsApp / Viber</div>
-        </div>
-      </section>
-    </main>
-
-    <aside class="social-rail" aria-label="Quick contact links">
-      <a href="mailto:bonjun.calamba@gmail.com" aria-label="Email Bon" data-cursor="EMAIL">EM</a>
-      <a href="https://wa.me/639074032640" target="_blank" rel="noopener" aria-label="WhatsApp Bon" data-cursor="WA">WA</a>
-      <a href="viber://chat?number=%2B639074032640" aria-label="Viber Bon" data-cursor="VB">VB</a>
-      <a href="https://www.linkedin.com/in/boncalamba/" target="_blank" rel="noopener" aria-label="LinkedIn profile" data-cursor="IN">IN</a>
-    </aside>
-
-    <footer class="site-footer section-shell">
-      <span>© {{ currentYear }} Bon Jun Calamba</span>
-      <span>Senior WordPress & Full-Stack Web Developer</span>
-      <span>HTML · Vue.js · GSAP</span>
-    </footer>
-  </div>
-
-  <noscript>
-    <div class="noscript">This portfolio uses JavaScript for interactive project rendering and animation.</div>
-  </noscript>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.5.41/dist/vue.global.prod.js" onerror="this.onerror=null;this.src='https://unpkg.com/vue@3.5.41/dist/vue.global.prod.js'"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.13.0/dist/gsap.min.js'"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.13.0/dist/ScrollTrigger.min.js'"></script>
-
-<script src="app.js?v=10.0.0"></script>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="contact-contours" aria-hidden="true"></div><div class="shell contact-inner"><div class="contact-overline"><span>05 / NEXT UP</span><span><i class="live-pulse"></i> LET'S MAKE IT HAPPEN</span></div><div class="contact-major" data-reveal><h2 id="contact-title">GOT A<br><span>CHALLENGE?</span></h2><p data-field="contact_text">Need a developer who can own delivery end to end? Let’s talk about your website, project or next role.</p></div><a id="email-cta" href="mailto:bonjun.calamba@gmail.com" class="email-link">START A CONVERSATION <span aria-hidden="true">↗</span></a><div class="contact-bottom"><div><span class="mini-label">CONNECT</span><div class="social-links"><a id="contact-linkedin" href="https://www.linkedin.com/in/boncalamba/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a id="contact-whatsapp" href="https://wa.me/639074032640" target="_blank" rel="noopener noreferrer">WHATSAPP ↗</a><a id="contact-github" href="https://github.com/boncalamba" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></div><div><span class="mini-label">LOCATION</span><strong data-field="location">PHILIPPINES · REMOTE WORLDWIDE</strong></div><div><span class="mini-label">DIRECT EMAIL</span><a id="footer-email" href="mailto:bonjun.calamba@gmail.com">bonjun.calamba@gmail.com</a></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><a href="#top" class="footer-logo">B<span>.</span></a><p>© <span id="year">2026</span> BON JUN CALAMBA. BUILT WITH INTENTION.</p><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <noscript><div class="noscript">Enable JavaScript to explore the complete project catalogue. <a href="mailto:bonjun.calamba@gmail.com">Get in touch</a>.</div></noscript>
 </body>
 </html>
