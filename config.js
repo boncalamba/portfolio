@@ -11,7 +11,7 @@
  * If your CMS is temporarily unreachable, the bundled content is used instead.
  */
 window.BON_CONFIG = Object.freeze({
-  wordpressUrl: '',
+  wordpressUrl: 'https://lightcyan-falcon-103753.hostingersite.com/',
   requestTimeoutMs: 7000,
   debug: false
 });
